@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devfolio | Portfolio Website using Next.js, Tailwind CSS, and Framer Motion",
-  description: "Devfolio is a portfolio website for developers to showcase their projects and skills.",
+  title: "Saurabh Dantani | Full Stack Developer | Freelancer | Problem Solver | AI Enthusiast",
+  description: "Saurabh Dantani is a Full Stack Developer passionate about building modern, responsive, and user-friendly web applications.",
 };
 
 export default function RootLayout({

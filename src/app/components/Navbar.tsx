@@ -1,131 +1,130 @@
 'use client'
+
 import Link from 'next/link'
-import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
+import {
+  SunIcon,
+  MoonIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 import { useTheme } from '../context/ThemeContext'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { FloatingNav } from '../components/ui/floating-navbar'
+import { BackgroundGradient } from '../components/ui/background-gradient'
+
+const navItems = [
+  { name: 'Home', link: '/' },
+  { name: 'About', link: '/about' },
+  { name: 'Projects', link: '/projects' },
+  { name: 'Blogs', link: '/blogs' },
+  { name: 'Contact', link: '/contact' },
+]
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const menuItems = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/blogs', label: 'Blogs' },
-    { href: '/contact', label: 'Contact' },
-  ];
+  const pathname = usePathname()
+  const { theme, toggleTheme } = useTheme()
+  const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold text-primary">
-            Devfolio&trade;
-          </Link>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <Link 
-                key={item.href}
-                href={item.href} 
-                className="hover:text-primary transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+    <>
+      {/* Desktop Navbar */}
+      <div className="hidden md:block fixed top-0 inset-x-0 z-50">
+        <FloatingNav navItems={navItems}>
+          <BackgroundGradient className="rounded-lg px-4 py-2">
+            <Link
+              href="/"
+              className="font-bold text-sm text-white tracking-wide"
             >
-              {theme === 'dark' ? (
-                <SunIcon className="h-5 w-5" />
-              ) : (
-                <MoonIcon className="h-5 w-5" />
-              )}
-            </motion.button>
-          </div>
+              Saurabh
+            </Link>
+          </BackgroundGradient>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            onClick={toggleMobileMenu}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <button
+            onClick={toggleTheme}
+            className="ml-2 p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition"
           >
-            {isMobileMenuOpen ? (
-              <XMarkIcon className="h-6 w-6" />
+            {theme === 'dark' ? (
+              <SunIcon className="h-4 w-4" />
             ) : (
-              <Bars3Icon className="h-6 w-6" />
+              <MoonIcon className="h-4 w-4" />
             )}
-          </motion.button>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden"
-            >
-              <div className="py-4 space-y-4">
-                {menuItems.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <Link
-                      href={item.href}
-                      className="block py-2 hover:text-primary transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: menuItems.length * 0.1 }}
-                >
-                  <button
-                    onClick={() => {
-                      toggleTheme();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="flex items-center py-2 hover:text-primary transition-colors"
-                  >
-                    {theme === 'dark' ? (
-                      <>
-                        <SunIcon className="h-5 w-5 mr-2" />
-                        Light Mode
-                      </>
-                    ) : (
-                      <>
-                        <MoonIcon className="h-5 w-5 mr-2" />
-                        Dark Mode
-                      </>
-                    )}
-                  </button>
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+          </button>
+        </FloatingNav>
       </div>
-    </nav>
+
+      {/* Mobile Navbar */}
+      <div className="md:hidden fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-lg">
+        <div className="flex items-center justify-between px-4 h-14">
+          <Link href="/" className="font-bold">
+            Saurabh
+          </Link>
+
+          <button onClick={() => setOpen(true)}>
+            <Bars3Icon className="h-6 w-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Slide Over */}
+      <AnimatePresence>
+        {open && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/40 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+            />
+
+            <motion.aside
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 22 }}
+              className="fixed z-50 right-0 top-0 h-full w-72 bg-white dark:bg-dark p-6"
+            >
+              <div className="flex items-center justify-between mb-8">
+                <span className="font-semibold">Menu</span>
+                <button onClick={() => setOpen(false)}>
+                  <XMarkIcon className="h-6 w-6" />
+                </button>
+              </div>
+
+              <nav className="space-y-5">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.link}
+                    href={item.link}
+                    onClick={() => setOpen(false)}
+                    className={`block text-lg ${
+                      pathname === item.link
+                        ? 'text-primary font-medium'
+                        : 'text-muted-foreground'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+
+              <button
+                onClick={toggleTheme}
+                className="mt-10 flex items-center gap-2 text-sm"
+              >
+                {theme === 'dark' ? (
+                  <SunIcon className="h-5 w-5" />
+                ) : (
+                  <MoonIcon className="h-5 w-5" />
+                )}
+                Toggle theme
+              </button>
+            </motion.aside>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   )
-} 
+}

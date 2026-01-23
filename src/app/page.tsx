@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <Blogs />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </main>
   );
 } 

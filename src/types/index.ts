@@ -14,3 +14,9 @@ export interface Blog {
   readTime: string;
   slug: string;
 }
+
+export interface SocialMedia {
+  name: string;
+  href: string;
+  icon: React.ElementType;
+}
