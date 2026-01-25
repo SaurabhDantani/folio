@@ -29,7 +29,7 @@ export default function Hero() {
           <div className="flex justify-center mb-8">
             <BackgroundGradient className="rounded-full p-1">
               <Image
-                src="/profile.avif"
+                src="/profileImg.jpg"
                 alt="Saurabh Dantani"
                 width={120}
                 height={120}
