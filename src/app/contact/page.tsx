@@ -21,21 +21,16 @@ export default function Contact() {
   })
   const [status, setStatus] = useState<FormStatus>('idle')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      const subject = `Portfolio Contact from ${formData.name}`
+      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
 
-      if (!response.ok) throw new Error('Failed to send message')
-      
+      window.location.href = `mailto:saurabhdantani09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
     } catch {
@@ -52,16 +47,16 @@ export default function Contact() {
 
   return (
     <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1 
+      <motion.h1
         className="text-4xl font-bold mb-8 text-center"
         {...fadeInUp}
       >
         Contact Me
       </motion.h1>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information */}
-        <motion.div 
+        <motion.div
           className="space-y-8"
           {...slideInLeft}
         >
@@ -72,14 +67,14 @@ export default function Contact() {
               opportunities to be part of your visions.
             </p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="space-y-4"
             variants={fadeIn}
             initial="initial"
             animate="animate"
           >
-            <motion.div 
+            <motion.div
               className="flex items-center gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
@@ -94,8 +89,8 @@ export default function Contact() {
                 </a>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex items-center gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
@@ -109,8 +104,8 @@ export default function Contact() {
                 </a>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex items-center gap-4"
               variants={fadeInUp}
               whileHover={{ x: 10 }}
@@ -124,14 +119,14 @@ export default function Contact() {
             </motion.div>
           </motion.div>
         </motion.div>
-        
+
         {/* Contact Form */}
-        <motion.div 
+        <motion.div
           className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
           {...slideInRight}
         >
-          <motion.form 
-            onSubmit={handleSubmit} 
+          <motion.form
+            onSubmit={handleSubmit}
             className="space-y-6"
             variants={fadeIn}
             initial="initial"
@@ -151,7 +146,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
-            
+
             <motion.div variants={fadeInUp}>
               <label htmlFor="email" className="block text-sm font-medium mb-2">
                 Email
@@ -166,7 +161,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
-            
+
             <motion.div variants={fadeInUp}>
               <label htmlFor="message" className="block text-sm font-medium mb-2">
                 Message
@@ -181,7 +176,7 @@ export default function Contact() {
                 className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
-            
+
             <motion.button
               type="submit"
               disabled={status === 'loading'}
@@ -191,9 +186,9 @@ export default function Contact() {
             >
               {status === 'loading' ? 'Sending...' : 'Send Message'}
             </motion.button>
-            
+
             {status === 'success' && (
-              <motion.p 
+              <motion.p
                 className="text-green-500 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -201,9 +196,9 @@ export default function Contact() {
                 Message sent successfully!
               </motion.p>
             )}
-            
+
             {status === 'error' && (
-              <motion.p 
+              <motion.p
                 className="text-red-500 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
