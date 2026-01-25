@@ -1,29 +1,45 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-interface ContactRequestBody {
-  name: string;
-  email: string;
-  message: string;
-}
-
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   try {
-    await request.json() as ContactRequestBody
-    // Here you would typically:
-    // 1. Validate the input
-    // 2. Send an email using a service like SendGrid, AWS SES, etc.
-    // 3. Store the message in a database if needed
+    const { name, email, message } = await req.json();
 
-    // For now, we'll just simulate a successful response
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: `New Portfolio Contact from ${name}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
+      `,
+      html: `
+        <h3>New Contact Form Portfolio</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
+  } catch (error) {
+    console.error('Error sending email:', error);
     return NextResponse.json(
-      { message: 'Message sent successfully' },
-      { status: 200 }
-    )
-  } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : 'Failed to send message'
-    return NextResponse.json(
-      { message: errorMessage },
+      { error: 'Failed to send email' },
       { status: 500 }
-    )
+    );
   }
-} 
+}

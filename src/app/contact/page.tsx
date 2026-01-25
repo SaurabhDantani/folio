@@ -21,15 +21,20 @@ export default function Contact() {
   })
   const [status, setStatus] = useState<FormStatus>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
 
     try {
-      const subject = `Portfolio Contact from ${formData.name}`
-      const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-      window.location.href = `mailto:saurabhdantani09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      if (!response.ok) throw new Error('Failed to send message')
 
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
