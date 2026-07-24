@@ -13,12 +13,14 @@ interface NavItem {
 
 interface FloatingNavProps {
   navItems: NavItem[]
+  pathname?: string
   className?: string
   children?: React.ReactNode
 }
 
 export function FloatingNav({
   navItems,
+  pathname,
   className,
   children,
 }: FloatingNavProps) {
@@ -59,9 +61,9 @@ export function FloatingNav({
         {/* Nav Items */}
         <div
           ref={containerRef}
-          className="relative flex items-center gap-4 md:gap-6 text-sm"
+          className="relative flex items-center gap-1 md:gap-2 text-sm"
         >
-          {/* Moving indicator */}
+          {/* Hover indicator */}
           {activeRect && containerRef.current && (
             <motion.div
               className="absolute rounded-full bg-primary/10 dark:bg-primary/20"
@@ -84,22 +86,31 @@ export function FloatingNav({
             />
           )}
 
-          {navItems.map((item) => (
-            <Link
-              key={item.link}
-              href={item.link}
-              onMouseEnter={(e) => {
-                const rect = (
-                  e.currentTarget as HTMLElement
-                ).getBoundingClientRect()
-                setActiveRect(rect)
-              }}
-              onMouseLeave={() => setActiveRect(null)}
-              className="relative px-3 py-1.5 text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-white transition"
-            >
-              <span className="relative z-10">{item.name}</span>
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.link
+
+            return (
+              <Link
+                key={item.link}
+                href={item.link}
+                onMouseEnter={(e) => {
+                  const rect = (
+                    e.currentTarget as HTMLElement
+                  ).getBoundingClientRect()
+                  setActiveRect(rect)
+                }}
+                onMouseLeave={() => setActiveRect(null)}
+                className={clsx(
+                  'relative px-3 py-1.5 rounded-full transition-all duration-200',
+                  isActive
+                    ? 'text-primary font-medium bg-primary/10 dark:bg-primary/15'
+                    : 'text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-white'
+                )}
+              >
+                <span className="relative z-10">{item.name}</span>
+              </Link>
+            )
+          })}
         </div>
 
         {/* Right */}
@@ -108,3 +119,4 @@ export function FloatingNav({
     </motion.nav>
   )
 }
+

@@ -1,31 +1,18 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { projects } from '@/contents/projects'
-import { motion } from 'framer-motion'
-import { HoverEffect } from '../components/ui/card-hover-effect'
+import { ProjectsContent } from '../components/ProjectsContent'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description:
+    'Explore projects built by Saurabh Dantani — including e-commerce platforms, real-time chat applications, and portfolio websites using React, Next.js, Node.js, and TypeScript.',
+  openGraph: {
+    title: 'Projects by Saurabh Dantani | Full Stack Developer',
+    description:
+      'E-commerce platforms, real-time chat apps, and more. Built with React, Next.js, Node.js, TypeScript.',
+  },
+}
 
 export default function Projects() {
-  return (
-    <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1
-        className="text-4xl font-bold mb-4 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        My Projects
-      </motion.h1>
-
-      <motion.p
-        className="text-lg text-secondary mb-24 text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Here are some of my recent projects. Click on the links to view the code or live demo.
-      </motion.p>
-
-      <HoverEffect items={projects} />
-    </div>
-  )
+  return <ProjectsContent projects={projects} />
 }

@@ -8,6 +8,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import { Spotlight } from '../components/ui/Spotlight'
 import { BackgroundGradient } from '../components/ui/background-gradient'
 import { socialMedia } from '@/contents/social'
+import { FaDownload } from 'react-icons/fa'
 
 export default function Hero() {
   return (
@@ -25,14 +26,33 @@ export default function Hero() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="max-w-3xl mx-auto text-center"
         >
+          {/* Availability Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="flex justify-center mb-6"
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
+                             bg-green-500/10 border border-green-500/20
+                             text-green-600 dark:text-green-400 text-sm font-medium">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+              </span>
+              Open for Freelance &amp; Collaboration
+            </span>
+          </motion.div>
+
           {/* Avatar */}
           <div className="flex justify-center mb-8">
             <BackgroundGradient className="rounded-full p-1">
               <Image
                 src="/profileImg.jpg"
-                alt="Saurabh Dantani"
+                alt="Saurabh Dantani — Full Stack Developer"
                 width={120}
                 height={120}
+                priority
                 className="rounded-full object-cover"
               />
             </BackgroundGradient>
@@ -65,12 +85,13 @@ export default function Hero() {
 
           {/* Social Links */}
           <div className="flex justify-center gap-6 mb-12">
-            {socialMedia.map(({ icon: Icon, href }, i) => (
+            {socialMedia.map(({ icon: Icon, href, name }, i) => (
               <motion.a
                 key={i}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit my ${name} profile`}
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.95 }}
                 className="p-3 rounded-full border border-black/[0.08] dark:border-white/10
@@ -92,6 +113,17 @@ export default function Hero() {
             >
               View Projects
             </Link>
+
+            <a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl
+                         border border-primary/30 text-primary font-medium
+                         hover:bg-primary/10 transition"
+            >
+              <FaDownload className="h-4 w-4" />
+              Download Resume
+            </a>
 
             <Link
               href="/contact"

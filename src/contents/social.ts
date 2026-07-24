@@ -1,5 +1,5 @@
 import { SocialMedia } from "@/types";
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export const socialMedia: SocialMedia[] = [
   {
@@ -8,13 +8,8 @@ export const socialMedia: SocialMedia[] = [
     icon: FaGithub,
   },
   {
-    name: 'Linkedin',
+    name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/saurabh-dantani-profile/',
     icon: FaLinkedin,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com',
-    icon: FaTwitter,
   },
 ];

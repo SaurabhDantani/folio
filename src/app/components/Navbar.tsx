@@ -12,13 +12,10 @@ import { useTheme } from '../context/ThemeContext'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { FloatingNav } from '../components/ui/floating-navbar'
-import { BackgroundGradient } from '../components/ui/background-gradient'
 
 const navItems = [
-  { name: 'Home', link: '/' },
   { name: 'About', link: '/about' },
   { name: 'Projects', link: '/projects' },
-  // { name: 'Blogs', link: '/blogs' },
   { name: 'Contact', link: '/contact' },
 ]
 
@@ -31,18 +28,31 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar */}
       <div className="hidden md:block fixed top-0 inset-x-0 z-50">
-        <FloatingNav navItems={navItems}>
-          <BackgroundGradient className="rounded-lg px-4 py-2">
+        <FloatingNav navItems={navItems} pathname={pathname}>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
             <Link
               href="/"
-              className="font-bold text-sm text-white tracking-wide"
+              className="group relative font-extrabold text-sm tracking-wide"
             >
-              Saurabh
+              <span
+                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500
+                           bg-[length:200%_auto] animate-gradient-x
+                           bg-clip-text text-transparent
+                           transition-all duration-300
+                           group-hover:drop-shadow-[0_0_8px_rgba(139,92,246,0.5)]"
+              >
+                Saurabh Dantani
+              </span>
             </Link>
-          </BackgroundGradient>
+          </motion.div>
 
           <button
             onClick={toggleTheme}
+            aria-label="Toggle theme"
             className="ml-2 p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition"
           >
             {theme === 'dark' ? (
@@ -57,11 +67,13 @@ export default function Navbar() {
       {/* Mobile Navbar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-lg">
         <div className="flex items-center justify-between px-4 h-14">
-          <Link href="/" className="font-bold">
-            Saurabh
+          <Link href="/" className="font-extrabold text-sm tracking-wide">
+            <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
+              Saurabh Dantani
+            </span>
           </Link>
 
-          <button onClick={() => setOpen(true)}>
+          <button onClick={() => setOpen(true)} aria-label="Open menu">
             <Bars3Icon className="h-6 w-6" />
           </button>
         </div>
@@ -88,7 +100,7 @@ export default function Navbar() {
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="font-semibold">Menu</span>
-                <button onClick={() => setOpen(false)}>
+                <button onClick={() => setOpen(false)} aria-label="Close menu">
                   <XMarkIcon className="h-6 w-6" />
                 </button>
               </div>
@@ -128,3 +140,4 @@ export default function Navbar() {
     </>
   )
 }
+

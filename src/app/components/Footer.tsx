@@ -17,16 +17,16 @@ export default function Footer() {
                 href="/"
                 className="text-lg font-bold tracking-wide"
               >
-                <span className="text-primary">Created By Saurabh</span>
+                <span className="text-primary">Saurabh Dantani</span>
               </Link>
 
-              {/* <p className="mt-2 text-sm text-secondary">
-                © {new Date().getFullYear()} Saurabh. All rights reserved.
-              </p> */}
+              <p className="mt-2 text-sm text-secondary">
+                © {new Date().getFullYear()} Saurabh Dantani. All rights reserved.
+              </p>
             </div>
 
             {/* Navigation */}
-            <nav className="flex flex-wrap justify-center gap-6 text-sm">
+            <nav className="flex flex-wrap justify-center gap-6 text-sm" aria-label="Footer navigation">
               <Link
                 href="/about"
                 className="text-secondary hover:text-primary transition"
@@ -38,12 +38,6 @@ export default function Footer() {
                 className="text-secondary hover:text-primary transition"
               >
                 Projects
-              </Link>
-              <Link
-                href="/blogs"
-                className="text-secondary hover:text-primary transition"
-              >
-                Blogs
               </Link>
               <Link
                 href="/contact"
@@ -64,7 +58,7 @@ export default function Footer() {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="p-2 rounded-full text-secondary hover:text-primary hover:bg-black/5 dark:hover:bg-white/10 transition"
-                  aria-label={item.name}
+                  aria-label={`Visit ${item.name}`}
                 >
                   <item.icon className="h-5 w-5" />
                 </motion.a>
