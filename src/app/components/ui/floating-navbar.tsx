@@ -5,7 +5,6 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-
 interface NavItem {
   name: string
   link: string
@@ -25,37 +24,35 @@ export function FloatingNav({
   children,
 }: FloatingNavProps) {
   const { scrollY } = useScroll()
-  const [hidden, setHidden] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const [activeRect, setActiveRect] = useState<DOMRect | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    const prev = scrollY.getPrevious() ?? 0
-    setHidden(latest > prev && latest > 80)
+    setScrolled(latest > 20)
   })
 
   const childrenArray = React.Children.toArray(children)
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: hidden ? -100 : 0 }}
-      transition={{ duration: 0.25, ease: 'easeOut' }}
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
       className={clsx(
-        'fixed top-4 inset-x-0 z-50 flex justify-center',
+        'fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-auto px-4',
         className
       )}
     >
       <div
         className={clsx(
-          'flex items-center gap-2 md:gap-6 px-4 md:px-6 py-3 rounded-full',
-          'bg-white/70 dark:bg-neutral-900/80',
-          'backdrop-blur-xl',
-          'border border-black/[0.08] dark:border-white/10',
-          'shadow-[0_8px_32px_0_rgba(0,0,0,0.1)] dark:shadow-black/30'
+          'flex items-center gap-2 md:gap-6 px-4 md:px-6 py-2.5 rounded-full transition-all duration-300',
+          scrolled
+            ? 'bg-white/85 dark:bg-[#09090b]/85 backdrop-blur-xl border border-gray-200/80 dark:border-white/15 shadow-lg shadow-black/5 dark:shadow-black/40'
+            : 'bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-gray-200/50 dark:border-white/10 shadow-sm'
         )}
       >
-        {/* Left */}
+        {/* Left (Logo / Name) */}
         {childrenArray[0]}
 
         {/* Nav Items */}
@@ -66,7 +63,7 @@ export function FloatingNav({
           {/* Hover indicator */}
           {activeRect && containerRef.current && (
             <motion.div
-              className="absolute rounded-full bg-primary/10 dark:bg-primary/20"
+              className="absolute rounded-full bg-blue-500/10 dark:bg-blue-500/20"
               style={{
                 left:
                   activeRect.left -
@@ -101,10 +98,10 @@ export function FloatingNav({
                 }}
                 onMouseLeave={() => setActiveRect(null)}
                 className={clsx(
-                  'relative px-3 py-1.5 rounded-full transition-all duration-200',
+                  'relative px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-200',
                   isActive
-                    ? 'text-primary font-medium bg-primary/10 dark:bg-primary/15'
-                    : 'text-neutral-600 dark:text-neutral-300 hover:text-primary dark:hover:text-white'
+                    ? 'text-blue-600 dark:text-blue-400 font-semibold bg-blue-500/10 dark:bg-blue-500/20'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-white'
                 )}
               >
                 <span className="relative z-10">{item.name}</span>
@@ -113,10 +110,11 @@ export function FloatingNav({
           })}
         </div>
 
-        {/* Right */}
+        {/* Right (Theme Toggle) */}
         {childrenArray[1]}
       </div>
     </motion.nav>
   )
 }
+
 
