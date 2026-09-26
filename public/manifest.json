@@ -1,0 +1,18 @@
+{
+  "name": "Saurabh Dantani — Full Stack & AI Developer",
+  "short_name": "Saurabh Dantani",
+  "description": "Freelance Full Stack & AI Integration Developer — React, Next.js, Node.js, Python. Scalable web & mobile apps, automation, and AI solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#3B82F6",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "developer tools"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

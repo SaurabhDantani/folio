@@ -53,6 +53,11 @@ export const metadata: Metadata = {
     "LLM developer",
     "AI agent developer",
     "WebSocket developer",
+    "NestJS developer",
+    ".NET Core developer",
+    "web scraping developer",
+    "Playwright automation",
+    "CRM development",
     "SEO services",
     "GEO AEO LLMO optimization",
     "freelance full stack developer in Ahmedabad",
@@ -66,6 +71,7 @@ export const metadata: Metadata = {
   creator: "Saurabh Dantani",
   publisher: "Saurabh Dantani",
   category: "technology",
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -104,6 +110,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: BASE_URL,
   },
+  verification: {
+    // Add your Google Search Console verification code here
+    // google: "your-verification-code",
+  },
 };
 
 // Structured Schemas for Search Engines & AI Answer Engines (GEO/AEO)
@@ -115,6 +125,8 @@ const personSchema = {
   url: BASE_URL,
   image: `${BASE_URL}/profileImg.jpg`,
   jobTitle: "Freelance Full Stack & AI Integration Developer",
+  telephone: "+917567358252",
+  email: "saurabhdantani09@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ahmedabad",
@@ -130,29 +142,47 @@ const personSchema = {
     "Next.js",
     "TypeScript",
     "Node.js",
+    "NestJS",
+    ".NET Core",
+    "C#",
     "Python",
     "Express.js",
     "PostgreSQL",
     "MongoDB",
+    "MSSQL",
     "AI Integration",
     "LLM APIs",
     "OpenAI",
     "WebSockets",
+    "Socket.IO",
     "React Native",
     "Tailwind CSS",
     "Docker",
     "AWS",
+    "Playwright",
+    "Puppeteer",
+    "Web Scraping",
     "SEO",
     "GEO",
     "AEO",
   ],
   description:
-    "Saurabh Dantani is a Freelance Full Stack & AI Integration Developer (React, Next.js, Node.js, Python) based in Ahmedabad, India. Available worldwide & remote for web, mobile, and AI projects.",
+    "Saurabh Dantani is a Freelance Full Stack & AI Integration Developer with 3+ years of experience in React, Next.js, Node.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Available worldwide & remote for web, mobile, automation, and AI projects.",
   hasOccupation: {
     "@type": "Occupation",
     name: "Full Stack Developer",
     occupationLocation: { "@type": "City", name: "Ahmedabad, India" },
   },
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Government Engineering College, Modasa",
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Government Polytechnic Ahmedabad",
+    },
+  ],
   makesOffer: [
     {
       "@type": "Offer",
@@ -160,6 +190,22 @@ const personSchema = {
         "@type": "Service",
         name: "Full Stack Web Development",
         serviceType: "Full Stack Web Development",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Web Scraping & Browser Automation",
+        serviceType: "Data Extraction & Automation",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "CRM & Admin Dashboard Development",
+        serviceType: "CRM Development",
       },
     },
     {
@@ -193,7 +239,7 @@ const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": `${BASE_URL}/#service`,
-  name: "Saurabh Dantani — Web Development, AI & Mobile Consulting",
+  name: "Saurabh Dantani — Web Development, Automation & AI Consulting",
   image: `${BASE_URL}/profileImg.jpg`,
   url: BASE_URL,
   priceRange: "$$",
@@ -204,6 +250,14 @@ const professionalServiceSchema = {
     addressLocality: "Ahmedabad",
     addressRegion: "Gujarat",
     addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+917567358252",
+    email: "saurabhdantani09@gmail.com",
+    contactType: "customer service",
+    availableLanguage: ["English", "Hindi", "Gujarati"],
+    areaServed: "Worldwide",
   },
   areaServed: [
     { "@type": "City", name: "Ahmedabad" },
@@ -217,6 +271,7 @@ const professionalServiceSchema = {
     { "@type": "Country", name: "United Kingdom" },
     { "@type": "Country", name: "Canada" },
     { "@type": "Country", name: "United Arab Emirates" },
+    { "@type": "Country", name: "Australia" },
   ],
   sameAs: [
     "https://github.com/SaurabhDantani",
@@ -232,7 +287,25 @@ const professionalServiceSchema = {
           "@type": "Service",
           name: "Full Stack Web Development",
           description:
-            "Fast, scalable, SEO-friendly web apps built with Next.js, React, TypeScript, Node.js, and PostgreSQL/MongoDB.",
+            "Fast, scalable, SEO-friendly web apps built with Next.js, React, TypeScript, Node.js, NestJS, .NET Core, and PostgreSQL/MongoDB.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Scraping & Browser Automation",
+          description:
+            "Automated data extraction, browser automation, and scheduled cron pipelines using Playwright, Puppeteer, and Python.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "CRM & Admin Dashboard Development",
+          description:
+            "Custom CRM systems, lead generation platforms, admin dashboards, and business management portals.",
         },
       },
       {
@@ -248,9 +321,9 @@ const professionalServiceSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Mobile App Development",
+          name: "AWS Deployment & DevOps",
           description:
-            "Cross-platform iOS and Android apps with React Native, clean UX, and high-performance offline capabilities.",
+            "AWS EC2/RDS/S3 infrastructure, Docker containers, Nginx reverse proxy, PM2 process management, and production deployments.",
         },
       },
       {
@@ -273,9 +346,14 @@ const websiteSchema = {
   name: "Saurabh Dantani Portfolio",
   url: BASE_URL,
   description:
-    "Freelance Full Stack & AI Developer portfolio — React, Next.js, Node.js, Python, AI integration, mobile apps, and custom web development.",
+    "Freelance Full Stack & AI Developer portfolio — React, Next.js, Node.js, NestJS, .NET Core, Python, web scraping, automation, AI integration, and custom web development.",
   publisher: { "@id": `${BASE_URL}/#person` },
   author: { "@id": `${BASE_URL}/#person` },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${BASE_URL}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const profilePageSchema = {
@@ -285,6 +363,17 @@ const profilePageSchema = {
   url: BASE_URL,
   name: "Saurabh Dantani — Freelance Full Stack & AI Developer",
   mainEntity: { "@id": `${BASE_URL}/#person` },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -295,6 +384,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3B82F6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -329,4 +423,3 @@ export default function RootLayout({
     </html>
   );
 }
-

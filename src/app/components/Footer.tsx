@@ -3,69 +3,112 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { socialMedia } from '@/contents/social'
-import { Heart, MapPin, Sparkles } from 'lucide-react'
+import { Heart, MapPin, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-slate-200 dark:border-white/[0.08] bg-slate-50 dark:bg-[#09090b]">
+    <footer className="relative border-t border-slate-200 dark:border-white/[0.08] bg-slate-50 dark:bg-[#09090b]" role="contentinfo">
       <div className="container max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-200 dark:border-white/[0.06]">
-          
+
           {/* Col 1: Brand & Tagline */}
-          <div className="md:col-span-5 text-center md:text-left">
+          <div className="md:col-span-4 text-center md:text-left">
             <Link href="/" className="inline-block text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">
               Saurabh Dantani<span className="text-blue-500">.</span>
             </Link>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm mx-auto md:mx-0 mb-4">
-              Freelance Full Stack &amp; AI Integration Developer based in Ahmedabad, India. Delivering enterprise-grade web applications &amp; mobile solutions.
+              Freelance Full Stack Developer &amp; AI Integration Engineer based in Ahmedabad, India. Specializing in Next.js, NestJS, .NET Core, Python, web scraping, and cloud deployments. Available for worldwide remote freelance projects.
             </p>
-            <div className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Ahmedabad, India • Available Worldwide</span>
+            <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+              <div className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>Ahmedabad, India</span>
+              </div>
+              <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>Available for Hire</span>
+              </div>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="md:col-span-3 text-center md:text-left">
+          <nav className="md:col-span-2 text-center md:text-left" aria-label="Footer Navigation">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-300 mb-4">
-              Quick Navigation
+              Navigation
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-600 dark:text-gray-400">
               <li>
                 <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Freelance Services</Link>
+                <Link href="/#services" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects &amp; Portfolio</Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About &amp; Skills</Link>
+                <Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About &amp; Experience</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Get in Touch</Link>
+                <Link href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact &amp; Hire</Link>
               </li>
+              <li>
+                <Link href="/blogs" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Col 3: Services */}
+          <div className="md:col-span-3 text-center md:text-left">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-300 mb-4">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-xs text-gray-600 dark:text-gray-400">
+              <li>Custom Web Apps & SaaS</li>
+              <li>CRM & Admin Dashboards</li>
+              <li>REST APIs & Backend Systems</li>
+              <li>Web Scraping & Automation</li>
+              <li>AWS Deployment & DevOps</li>
+              <li>AI & LLM Integration</li>
             </ul>
           </div>
 
-          {/* Col 3: Services Offered Keywords */}
-          <div className="md:col-span-4 text-center md:text-left">
+          {/* Col 4: Contact & Tech Stack */}
+          <div className="md:col-span-3 text-center md:text-left">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-300 mb-4">
-              Capabilities
+              Contact
+            </h4>
+            <div className="space-y-3 mb-6">
+              <a href="mailto:saurabhdantani09@gmail.com" className="flex items-center justify-center md:justify-start gap-2 text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Mail className="w-3.5 h-3.5" />
+                <span>saurabhdantani09@gmail.com</span>
+              </a>
+              <a href="tel:+917567358252" className="flex items-center justify-center md:justify-start gap-2 text-xs text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <Phone className="w-3.5 h-3.5" />
+                <span>+91 7567358252</span>
+              </a>
+            </div>
+
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-300 mb-3">
+              Tech Stack
             </h4>
             <div className="flex flex-wrap justify-center md:justify-start gap-1.5">
               {[
-                'Next.js 15',
-                'React 19',
-                'TypeScript',
+                'Next.js',
+                'React',
+                'NestJS',
+                '.NET Core',
                 'Node.js',
-                'Python API',
-                'AI Chatbots',
-                'OpenAI GPT-4o',
-                'React Native',
-                'WebSockets',
-                'SEO & GEO',
+                'Python',
+                'TypeScript',
+                'PostgreSQL',
+                'AWS',
+                'Docker',
+                'Playwright',
+                'Socket.IO',
               ].map((tech) => (
                 <span
                   key={tech}
@@ -108,4 +151,3 @@ export default function Footer() {
     </footer>
   )
 }
-

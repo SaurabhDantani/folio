@@ -1,21 +1,46 @@
 import type { Metadata } from 'next'
 import { AboutContent } from '../components/AboutContent'
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev'
+
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About — Experience, Skills & Education',
   description:
-    'Learn about Saurabh Dantani — Full Stack Developer with experience in React, Next.js, Node.js, and TypeScript. Based in Ahmedabad, India. Passionate about building scalable web applications.',
+    'Saurabh Dantani — Full Stack Developer with 3+ years of professional experience in React, Next.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Building scalable web applications, CRM platforms, and automation systems.',
   openGraph: {
-    title: 'About Saurabh Dantani | Full Stack Developer',
+    title: 'About Saurabh Dantani | Full Stack & AI Developer',
     description:
-      'Full Stack Developer with hands-on experience in React, Next.js, Node.js. Based in Ahmedabad, India.',
+      'Full Stack Developer with 3+ years hands-on experience in React, Next.js, NestJS, .NET Core, Python, web scraping, and cloud deployment. Based in Ahmedabad, India.',
+    url: `${BASE_URL}/about`,
   },
+  alternates: {
+    canonical: `${BASE_URL}/about`,
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: BASE_URL,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'About',
+      item: `${BASE_URL}/about`,
+    },
+  ],
 }
 
 const experience = [
   {
     title: 'Senior Full-Stack & Automation Engineer',
-    company: 'Ambit Global Solutionw',
+    company: 'Ambit Global Solutions',
     period: 'May 2026 – Present',
     bullets: [
       'Architected a US-Based Lead Generation & CRM Platform using Express.js, Next.js, Playwright, web scraping, and automated cron jobs for BD teams.',
@@ -51,5 +76,13 @@ const education = [
 ]
 
 export default function About() {
-  return <AboutContent experience={experience} education={education} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <AboutContent experience={experience} education={education} />
+    </>
+  )
 }
