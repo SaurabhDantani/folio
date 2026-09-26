@@ -69,7 +69,7 @@ export default function CTABanner() {
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-blue-500" />
-              3.6+ years of experience
+              4+ years of experience
             </span>
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-purple-500" />

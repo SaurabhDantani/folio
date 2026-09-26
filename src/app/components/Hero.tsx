@@ -10,7 +10,7 @@ import { FaDownload } from 'react-icons/fa'
 import { ArrowRight, Globe, Sparkles } from 'lucide-react'
 
 const STATS = [
-  { value: '3+ Years', label: 'Experience' },
+  { value: '4+ Years', label: 'Experience' },
   { value: '20+', label: 'Products & Solutions' },
   { value: '15+', label: 'Tech Stack Tools' },
 ]
@@ -68,7 +68,7 @@ export default function Hero() {
               <span>
                 <Typewriter
                   words={[
-                    'Full-Stack Developer (3.6+ Yrs)',
+                    'Full-Stack Developer (4+ Yrs)',
                     'NestJS & Node.js Engineer',
                     'Web Scraping & Automation Expert',
                     '.NET Core & Cloud Architect',
@@ -86,7 +86,7 @@ export default function Hero() {
 
             {/* Paragraph Bio */}
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-              Full-Stack Developer with <strong className="text-gray-900 dark:text-white">3+ years of experience</strong> building production-grade web applications, backend microservices, web automation workflows, dashboards, and APIs using{' '}
+              Full-Stack Developer with <strong className="text-gray-900 dark:text-white">4+ years of experience</strong> building production-grade web applications, backend microservices, web automation workflows, dashboards, and APIs using{' '}
               <strong className="text-gray-900 dark:text-white">React, Next.js, Node.js, NestJS, .NET Core, Python &amp; AWS</strong>. Available for freelance collaborations with startups, businesses, agencies, and international clients.
             </p>
 

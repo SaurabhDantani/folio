@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Saurabh Dantani | Freelance Full Stack & AI Developer",
     description:
-      "Freelance Full Stack & AI Developer. 3+ Years experience in React, Next.js, Node.js, Python, AI/LLM integration. Available worldwide & remote.",
+      "Freelance Full Stack & AI Developer. 4+ Years experience in React, Next.js, Node.js, Python, AI/LLM integration. Available worldwide & remote.",
     images: ["/profileImg.jpg"],
   },
   robots: {
@@ -167,7 +167,7 @@ const personSchema = {
     "AEO",
   ],
   description:
-    "Saurabh Dantani is a Freelance Full Stack & AI Integration Developer with 3+ years of experience in React, Next.js, Node.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Available worldwide & remote for web, mobile, automation, and AI projects.",
+    "Saurabh Dantani is a Freelance Full Stack & AI Integration Developer with 4+ years of experience in React, Next.js, Node.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Available worldwide & remote for web, mobile, automation, and AI projects.",
   hasOccupation: {
     "@type": "Occupation",
     name: "Full Stack Developer",

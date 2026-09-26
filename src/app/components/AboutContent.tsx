@@ -54,7 +54,7 @@ export function AboutContent({
             <div className="h-1 w-1.5 bg-blue-500/20 rounded-full" />
           </div>
           <p className="mx-auto mt-2 max-w-2xl text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-            Full Stack Developer with 3+ years of professional experience building production-grade web applications, CRM platforms, web scraping automation, real-time systems, and backend microservices for startups and businesses.
+            Full Stack Developer with 4+ years of professional experience building production-grade web applications, CRM platforms, web scraping automation, real-time systems, and backend microservices for startups and businesses.
           </p>
         </motion.header>
 

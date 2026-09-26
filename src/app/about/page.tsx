@@ -6,11 +6,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev
 export const metadata: Metadata = {
   title: 'About — Experience, Skills & Education',
   description:
-    'Saurabh Dantani — Full Stack Developer with 3+ years of professional experience in React, Next.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Building scalable web applications, CRM platforms, and automation systems.',
+    'Saurabh Dantani — Full Stack Developer with 4+ years of professional experience in React, Next.js, NestJS, .NET Core, Python, and AWS. Based in Ahmedabad, India. Building scalable web applications, CRM platforms, and automation systems.',
   openGraph: {
     title: 'About Saurabh Dantani | Full Stack & AI Developer',
     description:
-      'Full Stack Developer with 3+ years hands-on experience in React, Next.js, NestJS, .NET Core, Python, web scraping, and cloud deployment. Based in Ahmedabad, India.',
+      'Full Stack Developer with 4+ years hands-on experience in React, Next.js, NestJS, .NET Core, Python, web scraping, and cloud deployment. Based in Ahmedabad, India.',
     url: `${BASE_URL}/about`,
   },
   alternates: {
