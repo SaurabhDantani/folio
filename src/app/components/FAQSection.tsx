@@ -46,19 +46,19 @@ export default function FAQSection() {
         
         {/* Header */}
         <div className="mb-14">
-          <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
             FAQ
           </div>
-          <h2 id="faq-heading" className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 id="faq-heading" className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
             Straight answers.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-zinc-400 text-sm sm:text-base">
             Everything you need to know about working together on full-stack, scraping, and backend projects.
           </p>
         </div>
 
         {/* Minimal Accordion List */}
-        <div className="border-t border-white/10 divide-y divide-white/10">
+        <div className="border-t border-slate-200 dark:border-white/10 divide-y divide-slate-200 dark:divide-white/10">
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index
             return (
@@ -66,13 +66,13 @@ export default function FAQSection() {
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full py-2 text-left flex items-center justify-between gap-4 font-semibold text-white text-base sm:text-lg hover:text-sky-400 transition-colors"
+                  className="w-full py-2 text-left flex items-center justify-between gap-4 font-semibold text-slate-900 dark:text-white text-base sm:text-lg hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
                   aria-expanded={isOpen}
                 >
                   <span>{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 text-sky-400' : ''
+                    className={`w-5 h-5 text-slate-400 dark:text-zinc-400 shrink-0 transition-transform duration-300 ${
+                      isOpen ? 'rotate-180 text-sky-600 dark:text-sky-400' : ''
                     }`}
                   />
                 </button>
@@ -86,7 +86,7 @@ export default function FAQSection() {
                       transition={{ duration: 0.25, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <p className="pt-2 pb-4 text-sm text-zinc-400 leading-relaxed font-normal">
+                      <p className="pt-2 pb-4 text-sm text-slate-600 dark:text-zinc-400 leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </motion.div>

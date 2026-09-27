@@ -103,13 +103,13 @@ export default function SkillsSection() {
         
         {/* Header */}
         <div className="mb-12">
-          <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
             Skills
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 max-w-2xl">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 max-w-2xl">
             Technical expertise across the entire stack.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-xl">
+          <p className="text-slate-600 dark:text-zinc-400 text-sm sm:text-base max-w-xl">
             Battle-tested technologies and tooling applied across production environments.
           </p>
         </div>
@@ -125,11 +125,11 @@ export default function SkillsSection() {
                 onClick={() => setActiveTab(cat.id)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all ${
                   isActive
-                    ? 'border border-blue-500/50 bg-blue-500/10 text-white shadow-md shadow-blue-500/10'
-                    : 'border border-white/10 bg-white/[0.02] text-zinc-400 hover:text-white hover:bg-white/[0.05]'
+                    ? 'border border-blue-600/40 dark:border-blue-500/50 bg-blue-50 dark:bg-blue-500/10 text-blue-700 dark:text-white shadow-xs'
+                    : 'border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-white/[0.05]'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-sky-400' : 'text-zinc-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-blue-600 dark:text-sky-400' : 'text-slate-500 dark:text-zinc-400'}`} />
                 <span>{cat.label}</span>
               </button>
             )
@@ -149,30 +149,30 @@ export default function SkillsSection() {
             {currentCategory.skills.map((skill) => (
               <div
                 key={skill.name}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 hover:border-white/20 hover:bg-white/[0.035] transition-all"
+                className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-5 hover:border-slate-300 dark:hover:border-white/20 hover:bg-slate-50/50 dark:hover:bg-white/[0.035] transition-all shadow-xs"
               >
                 {/* Top: Name & Percentage */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="font-bold text-sm text-white tracking-tight">
+                  <span className="font-bold text-sm text-slate-900 dark:text-white tracking-tight">
                     {skill.name}
                   </span>
-                  <span className="text-xs font-semibold text-sky-400">
+                  <span className="text-xs font-semibold text-sky-600 dark:text-sky-400">
                     {skill.percentage}%
                   </span>
                 </div>
 
                 {/* Middle: Progress Bar */}
-                <div className="w-full h-1.5 rounded-full bg-white/10 overflow-hidden mb-3">
+                <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-white/10 overflow-hidden mb-3">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.percentage}%` }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="h-full rounded-full bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-300"
+                    className="h-full rounded-full bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-400"
                   />
                 </div>
 
                 {/* Bottom: Level */}
-                <div className="text-[11px] text-zinc-500 font-medium">
+                <div className="text-[11px] text-slate-500 dark:text-zinc-500 font-medium">
                   {skill.level}
                 </div>
               </div>
@@ -181,18 +181,18 @@ export default function SkillsSection() {
         </AnimatePresence>
 
         {/* Bottom Stats Counter Bar */}
-        <div className="flex flex-wrap gap-8 sm:gap-14 pt-10 mt-10 border-t border-white/[0.06]">
+        <div className="flex flex-wrap gap-8 sm:gap-14 pt-10 mt-10 border-t border-slate-200/80 dark:border-white/[0.06]">
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white">25+</div>
-            <div className="text-xs text-zinc-400 font-medium mt-1">Technologies</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">25+</div>
+            <div className="text-xs text-slate-600 dark:text-zinc-400 font-medium mt-1">Technologies</div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white">5</div>
-            <div className="text-xs text-zinc-400 font-medium mt-1">Categories</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">5</div>
+            <div className="text-xs text-slate-600 dark:text-zinc-400 font-medium mt-1">Categories</div>
           </div>
           <div>
-            <div className="text-2xl sm:text-3xl font-extrabold text-white">15+</div>
-            <div className="text-xs text-zinc-400 font-medium mt-1">Expert Level</div>
+            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">15+</div>
+            <div className="text-xs text-slate-600 dark:text-zinc-400 font-medium mt-1">Expert Level</div>
           </div>
         </div>
 

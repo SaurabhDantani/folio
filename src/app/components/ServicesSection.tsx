@@ -87,13 +87,13 @@ export default function ServicesSection() {
         
         {/* Section Header */}
         <div className="mb-14">
-          <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
             Services
           </div>
-          <h2 id="services-heading" className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 max-w-2xl">
+          <h2 id="services-heading" className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 max-w-2xl">
             End-to-end engineering from concept to scale.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-xl">
+          <p className="text-slate-600 dark:text-zinc-400 text-sm sm:text-base max-w-xl">
             Clean architecture, real-time features, automated scraping pipelines, and production-grade performance.
           </p>
         </div>
@@ -109,30 +109,30 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group"
+                className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-8 hover:border-slate-300 dark:hover:border-white/20 hover:bg-slate-50/50 dark:hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between group shadow-xs"
               >
                 <div>
                   {/* Icon Badge */}
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 group-hover:border-sky-500/40 transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-sky-600 dark:text-sky-400 mb-6 group-hover:scale-110 group-hover:border-sky-500/40 transition-all">
                     <Icon className="w-5 h-5" />
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">
                     {service.title}
                   </h3>
 
                   {/* Paragraph */}
-                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Sub-offering Bullets with Blue Triangle Indicators */}
-                <ul className="space-y-2 pt-4 border-t border-white/[0.06] text-xs text-zinc-300">
+                <ul className="space-y-2 pt-4 border-t border-slate-200/80 dark:border-white/[0.06] text-xs text-slate-700 dark:text-zinc-300">
                   {service.bullets.map((bullet, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-sky-400 font-bold shrink-0 mt-0.5">▸</span>
+                      <span className="text-sky-600 dark:text-sky-400 font-bold shrink-0 mt-0.5">▸</span>
                       <span>{bullet}</span>
                     </li>
                   ))}

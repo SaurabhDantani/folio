@@ -95,7 +95,7 @@ export const HoverEffect = ({
                 {item.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-gray-300"
+                    className="text-[11px] font-medium px-2.5 py-1 rounded-md bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] text-slate-700 dark:text-gray-300"
                   >
                     {tech}
                   </span>
@@ -103,15 +103,15 @@ export const HoverEffect = ({
               </div>
             )}
 
-            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-white/[0.06]">
+            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-white/[0.06]">
               {item.githubLink && (
                 <a
                   href={item.githubLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-medium text-gray-300 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
-                  <FaGithub className="w-4 h-4 text-blue-400" />
+                  <FaGithub className="w-4 h-4 text-blue-500 dark:text-blue-400" />
                   <span>GitHub Repository</span>
                 </a>
               )}
@@ -120,7 +120,7 @@ export const HoverEffect = ({
                   href={item.demoLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors ml-auto"
+                  className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors ml-auto"
                 >
                   <FaExternalLinkAlt className="w-3.5 h-3.5" />
                   <span>Live Demo</span>
@@ -161,7 +161,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-white text-lg font-bold tracking-tight mt-2 group-hover:text-blue-400 transition-colors", className)}>
+    <h4 className={cn("text-slate-900 dark:text-white text-lg font-bold tracking-tight mt-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors", className)}>
       {children}
     </h4>
   );
@@ -177,7 +177,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-2 text-gray-400 leading-relaxed text-xs sm:text-sm line-clamp-3",
+        "mt-2 text-slate-600 dark:text-gray-400 leading-relaxed text-xs sm:text-sm line-clamp-3",
         className
       )}
     >

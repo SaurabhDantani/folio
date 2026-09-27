@@ -33,13 +33,13 @@ export default function TestimonialsSection() {
         
         {/* Header */}
         <div className="mb-14">
-          <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
             Proof
           </div>
-          <h2 id="testimonials-heading" className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4 max-w-2xl">
+          <h2 id="testimonials-heading" className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4 max-w-2xl">
             What shipping actually feels like.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-xl">
+          <p className="text-slate-600 dark:text-zinc-400 text-sm sm:text-base max-w-xl">
             Feedback from founders, CEOs, and engineering teams on production deliveries.
           </p>
         </div>
@@ -53,23 +53,23 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 hover:border-white/20 hover:bg-white/[0.035] transition-all flex flex-col justify-between"
+              className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-8 hover:border-slate-300 dark:hover:border-white/20 hover:bg-slate-50/50 dark:hover:bg-white/[0.035] transition-all flex flex-col justify-between shadow-xs"
             >
               {/* Quote Body */}
-              <blockquote className="text-sm sm:text-base text-zinc-300 leading-relaxed italic mb-8 font-normal">
+              <blockquote className="text-sm sm:text-base text-slate-700 dark:text-zinc-300 leading-relaxed italic mb-8 font-normal">
                 {t.quote}
               </blockquote>
 
               {/* Author & Project Meta */}
-              <div className="pt-4 border-t border-white/[0.06] space-y-1">
-                <div className="font-bold text-white text-sm">
+              <div className="pt-4 border-t border-slate-200/80 dark:border-white/[0.06] space-y-1">
+                <div className="font-bold text-slate-900 dark:text-white text-sm">
                   {t.name}
                 </div>
-                <div className="text-xs text-zinc-400 font-medium">
+                <div className="text-xs text-slate-500 dark:text-zinc-400 font-medium">
                   {t.role}
                 </div>
                 <div className="pt-2">
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[11px] font-medium text-sky-400">
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[11px] font-medium text-blue-600 dark:text-sky-400">
                     {t.project}
                   </span>
                 </div>

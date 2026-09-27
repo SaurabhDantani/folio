@@ -17,16 +17,16 @@ export default function Projects() {
         {/* Header with Title on Left, Link on Right */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
           <div>
-            <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+            <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
               Selected Work
             </div>
-            <h2 id="projects-heading" className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            <h2 id="projects-heading" className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Built for production, not demos.
             </h2>
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <span>All projects</span>
             <span>↗</span>
@@ -39,21 +39,21 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10 mb-10 hover:border-white/20 transition-all duration-300"
+          className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-6 sm:p-10 mb-10 hover:border-slate-300 dark:hover:border-white/20 transition-all duration-300 shadow-xs"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: Browser Mockup Window */}
             <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-white/10 bg-zinc-950 overflow-hidden shadow-2xl">
+              <div className="rounded-2xl border border-slate-700/60 dark:border-white/10 bg-zinc-950 overflow-hidden shadow-2xl">
                 {/* Browser Top Bar */}
-                <div className="px-4 py-3 border-b border-white/10 bg-white/[0.02] flex items-center gap-3">
+                <div className="px-4 py-3 border-b border-white/10 bg-white/[0.04] flex items-center gap-3">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                   </div>
-                  <div className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-zinc-400 text-center truncate">
+                  <div className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-white/10 border border-white/10 text-[11px] font-mono text-zinc-300 text-center truncate">
                     https://crm.leadgeneration.app/dashboard
                   </div>
                 </div>
@@ -101,21 +101,21 @@ export default function Projects() {
             <div className="lg:col-span-5 space-y-4">
               {/* Badges */}
               <div className="flex items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-sky-400 font-semibold text-xs">
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-600 dark:text-sky-400 font-semibold text-xs">
                   {featuredProject.metric}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-zinc-400 text-xs">
+                <span className="px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-zinc-400 text-xs font-medium">
                   Full Stack SaaS
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {featuredProject.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed">
                 {featuredProject.description}
               </p>
 
@@ -124,7 +124,7 @@ export default function Projects() {
                 {(featuredProject.technologies || []).map((t) => (
                   <span
                     key={t}
-                    className="px-2.5 py-1 rounded-full border border-white/10 bg-white/[0.02] text-xs font-medium text-zinc-400"
+                    className="px-2.5 py-1 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100/70 dark:bg-white/[0.02] text-xs font-medium text-slate-700 dark:text-zinc-300"
                   >
                     {t}
                   </span>
@@ -132,19 +132,19 @@ export default function Projects() {
               </div>
 
               {/* Action Links */}
-              <div className="flex items-center gap-6 pt-4 border-t border-white/[0.06]">
+              <div className="flex items-center gap-6 pt-4 border-t border-slate-200/80 dark:border-white/[0.06]">
                 <a
                   href={featuredProject.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors"
                 >
                   <span>Live product</span>
                   <span className="text-xs">↗</span>
                 </a>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-zinc-400 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
                   <span>Case notes →</span>
                 </Link>
@@ -163,37 +163,37 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.02] p-7 hover:border-white/20 hover:bg-white/[0.035] transition-all flex flex-col justify-between group"
+              className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-7 hover:border-slate-300 dark:hover:border-white/20 hover:bg-slate-50/50 dark:hover:bg-white/[0.035] transition-all flex flex-col justify-between group shadow-xs"
             >
               <div>
                 {/* Metric Badge */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sky-400 font-semibold text-xs">
+                  <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-sky-400 font-semibold text-xs">
                     {p.metric}
                   </span>
-                  <span className="text-xs text-zinc-500 font-medium">
+                  <span className="text-xs text-slate-500 dark:text-zinc-500 font-medium">
                     {p.category}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h4 className="text-lg font-bold text-white mb-2 tracking-tight group-hover:text-sky-400 transition-colors">
+                <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
                   {p.title}
                 </h4>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed mb-6">
                   {p.description}
                 </p>
               </div>
 
               <div>
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-white/[0.06]">
+                <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-slate-200/80 dark:border-white/[0.06]">
                   {(p.technologies || []).slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-0.5 rounded-full border border-white/10 bg-white/[0.02] text-[11px] font-medium text-zinc-400"
+                      className="px-2.5 py-0.5 rounded-full border border-slate-200 dark:border-white/10 bg-slate-100/70 dark:bg-white/[0.02] text-[11px] font-medium text-slate-700 dark:text-zinc-300"
                     >
                       {tech}
                     </span>
@@ -206,7 +206,7 @@ export default function Projects() {
                     href={p.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-sky-400 hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:underline"
                   >
                     <span>View project</span>
                     <span>↗</span>

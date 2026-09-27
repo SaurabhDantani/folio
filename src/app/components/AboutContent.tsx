@@ -38,13 +38,13 @@ export function AboutContent({
           transition={{ duration: 0.4 }}
           className="mb-20 text-center max-w-3xl mx-auto"
         >
-          <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
             About Me
           </div>
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-4">
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
             A builder from Ahmedabad who ships for the world.
           </h1>
-          <p className="mt-4 text-sm sm:text-base text-zinc-400 leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-zinc-400 leading-relaxed">
             Full Stack Developer with 4+ years of professional experience building production-grade web applications, CRM platforms, web scraping automation, real-time systems, and backend microservices for startups and businesses.
           </p>
         </motion.header>
@@ -60,12 +60,12 @@ export function AboutContent({
         </section>
 
         {/* Education */}
-        <section aria-labelledby="education-heading" className="pt-8 border-t border-white/[0.08]">
+        <section aria-labelledby="education-heading" className="pt-8 border-t border-slate-200 dark:border-white/[0.08]">
           <div className="mb-12">
-            <div className="text-xs uppercase tracking-widest text-sky-400 font-semibold mb-3">
+            <div className="text-xs uppercase tracking-widest text-sky-600 dark:text-sky-400 font-semibold mb-3">
               Education
             </div>
-            <h2 id="education-heading" className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 id="education-heading" className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Academic Background
             </h2>
           </div>
@@ -74,15 +74,15 @@ export function AboutContent({
             {education.map((item, idx) => (
               <div
                 key={idx}
-                className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 hover:border-white/20 transition-all"
+                className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-8 hover:border-slate-300 dark:hover:border-white/20 hover:bg-slate-50/50 dark:hover:bg-white/[0.035] transition-all shadow-xs"
               >
-                <div className="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-sky-400 mb-6">
+                <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-sky-600 dark:text-sky-400 mb-6">
                   <GraduationCap className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 tracking-tight">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-zinc-400 leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>

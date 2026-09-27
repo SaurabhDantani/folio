@@ -17,7 +17,7 @@ export default function CTABanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] via-zinc-950 to-blue-950/20 p-8 sm:p-12 overflow-hidden shadow-2xl"
+          className="relative rounded-3xl border border-slate-200 dark:border-white/10 bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 dark:from-white/[0.03] dark:via-zinc-950 dark:to-blue-950/20 p-8 sm:p-12 overflow-hidden shadow-xl dark:shadow-2xl"
         >
           {/* Ambient Glows Inside Card */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -27,18 +27,18 @@ export default function CTABanner() {
             
             {/* Left: Headline & Subtitle */}
             <div className="lg:col-span-8 space-y-4">
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.1]">
                 Let&apos;s make the next thing unforgettable.
               </h2>
-              <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
+              <p className="text-slate-600 dark:text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
                 Product, scraping pipeline, or backend microservice — I&apos;ll build it like it has to last.
               </p>
             </div>
 
             {/* Right: Micro Profile Card */}
             <div className="lg:col-span-4 flex lg:justify-end">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 flex items-center gap-3 backdrop-blur-md">
-                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/10">
+              <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/[0.02] p-4 flex items-center gap-3 backdrop-blur-md shadow-xs">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-slate-200 dark:border-white/10">
                   <Image
                     src="/profileImg.jpg"
                     alt="Saurabh Dantani"
@@ -47,10 +47,10 @@ export default function CTABanner() {
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-white text-sm">Saurabh Dantani</div>
-                  <div className="text-xs text-zinc-400">Ahmedabad, Gujarat, India</div>
-                  <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <div className="font-bold text-slate-900 dark:text-white text-sm">Saurabh Dantani</div>
+                  <div className="text-xs text-slate-600 dark:text-zinc-400">Ahmedabad, Gujarat, India</div>
+                  <div className="flex items-center gap-1.5 text-[11px] text-emerald-600 dark:text-emerald-400 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
                     <span>Open to freelance projects worldwide</span>
                   </div>
                 </div>
@@ -60,11 +60,11 @@ export default function CTABanner() {
           </div>
 
           {/* Action Row */}
-          <div className="relative z-10 mt-10 pt-8 border-t border-white/[0.08] flex flex-wrap items-center gap-4">
-            {/* White Pill Button */}
+          <div className="relative z-10 mt-10 pt-8 border-t border-slate-200 dark:border-white/[0.08] flex flex-wrap items-center gap-4">
+            {/* Action Pill Button */}
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95 shadow-md shadow-white/10"
+              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full bg-slate-900 dark:bg-white text-white dark:text-black font-semibold text-xs sm:text-sm hover:bg-slate-800 dark:hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95 shadow-md"
             >
               <span>Get in touch</span>
               <span className="text-xs">↗</span>
@@ -73,9 +73,9 @@ export default function CTABanner() {
             {/* Email Pill Button */}
             <a
               href="mailto:saurabhdantani09@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white font-medium text-xs sm:text-sm transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.04] hover:bg-slate-100 dark:hover:bg-white/[0.08] text-slate-800 dark:text-white font-medium text-xs sm:text-sm transition-all hover:scale-105 active:scale-95 shadow-xs"
             >
-              <Mail className="w-4 h-4 text-sky-400" />
+              <Mail className="w-4 h-4 text-sky-600 dark:text-sky-400" />
               <span>saurabhdantani09@gmail.com</span>
             </a>
 
@@ -86,7 +86,7 @@ export default function CTABanner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
-                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] hover:bg-slate-100 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/30 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-all hover:scale-105 shadow-xs"
               >
                 <FaLinkedinIn className="w-4 h-4" />
               </a>
@@ -95,14 +95,14 @@ export default function CTABanner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
-                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] hover:bg-slate-100 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/30 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-all hover:scale-105 shadow-xs"
               >
                 <FaGithub className="w-4 h-4" />
               </a>
               <a
                 href="mailto:saurabhdantani09@gmail.com"
                 aria-label="Email Saurabh"
-                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
+                className="w-10 h-10 rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.03] hover:bg-slate-100 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/30 text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-all hover:scale-105 shadow-xs"
               >
                 <Mail className="w-4 h-4" />
               </a>
