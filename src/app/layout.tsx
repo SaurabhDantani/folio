@@ -382,7 +382,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth dark">
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#3B82F6" />
@@ -411,13 +411,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`bg-white text-gray-900 dark:bg-[#09090b] dark:text-gray-100 transition-colors duration-300 antialiased ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-slate-50 text-slate-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-300 antialiased ${geistSans.variable} ${geistMono.variable}`}
       >
         <ThemeProvider>
-          <AIChatbot />
           <Navbar />
-          <main className="min-h-screen pt-20">{children}</main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
+          <AIChatbot />
         </ThemeProvider>
       </body>
     </html>

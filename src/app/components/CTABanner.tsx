@@ -1,82 +1,116 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, MessageCircle } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { FaLinkedinIn, FaGithub, FaXTwitter } from 'react-icons/fa6'
 
 export default function CTABanner() {
   return (
-    <section className="py-20 sm:py-24 relative overflow-hidden" aria-label="Call to Action">
-      {/* Multi-layered gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/5 to-cyan-600/10" />
-      <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+    <section className="py-16 sm:py-24 relative overflow-hidden" aria-label="Call to Action">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Glow Container Card */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] via-zinc-950 to-blue-950/20 p-8 sm:p-12 overflow-hidden shadow-2xl"
         >
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-medium mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Available for New Projects</span>
+          {/* Ambient Glows Inside Card */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start justify-between">
+            
+            {/* Left: Headline & Subtitle */}
+            <div className="lg:col-span-8 space-y-4">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+                Let&apos;s make the next thing unforgettable.
+              </h2>
+              <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                Product, scraping pipeline, or backend microservice — I&apos;ll build it like it has to last.
+              </p>
+            </div>
+
+            {/* Right: Micro Profile Card */}
+            <div className="lg:col-span-4 flex lg:justify-end">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-4 flex items-center gap-3 backdrop-blur-md">
+                <div className="relative w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/10">
+                  <Image
+                    src="/profileImg.jpg"
+                    alt="Saurabh Dantani"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="font-bold text-white text-sm">Saurabh Dantani</div>
+                  <div className="text-xs text-zinc-400">Ahmedabad, Gujarat, India</div>
+                  <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Open to freelance projects worldwide</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-4 leading-[1.15]">
-            Have a project in mind?
-            <br />
-            <span className="text-gradient">Let&apos;s build it together.</span>
-          </h2>
+          {/* Action Row */}
+          <div className="relative z-10 mt-10 pt-8 border-t border-white/[0.08] flex flex-wrap items-center gap-4">
+            {/* White Pill Button */}
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95 shadow-md shadow-white/10"
+            >
+              <span>Get in touch</span>
+              <span className="text-xs">↗</span>
+            </Link>
 
-          {/* Description */}
-          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
-            Whether you need a full-stack web app, CRM platform, web scraping automation, or AI integration — I&apos;m ready to bring your idea to life with clean, scalable code.
-          </p>
+            {/* Email Pill Button */}
+            <a
+              href="mailto:saurabhdantani09@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-white font-medium text-xs sm:text-sm transition-all hover:scale-105 active:scale-95"
+            >
+              <Mail className="w-4 h-4 text-sky-400" />
+              <span>saurabhdantani09@gmail.com</span>
+            </a>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-blue-500/25"
+            {/* Social Icon Buttons */}
+            <div className="flex items-center gap-2 sm:ml-auto">
+              <a
+                href="https://www.linkedin.com/in/saurabh-dantani-profile/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>Start a Conversation</span>
-              </Link>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-slate-100 dark:bg-white/[0.05] hover:bg-slate-200 dark:hover:bg-white/[0.1] border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white font-semibold text-sm transition-all duration-300"
+                <FaLinkedinIn className="w-4 h-4" />
+              </a>
+              <a
+                href="https://github.com/SaurabhDantani"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
               >
-                <span>View My Work</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="mailto:saurabhdantani09@gmail.com"
+                aria-label="Email Saurabh"
+                className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/10 hover:border-white/30 text-zinc-300 hover:text-white flex items-center justify-center transition-all hover:scale-105"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500 dark:text-gray-400">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              Available for immediate start
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-blue-500" />
-              4+ years of experience
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-purple-500" />
-              20+ products delivered
-            </span>
-          </div>
         </motion.div>
+
       </div>
     </section>
   )
