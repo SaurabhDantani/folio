@@ -368,6 +368,13 @@ export default function RootLayout({
             __html: JSON.stringify(profilePageSchema),
           }}
         />
+        {/* Cloudflare Web Analytics */}
+        <script
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "911e52642ac44bd19e8a9124f5f6b3bb"}'
+        />
+        {/* End Cloudflare Web Analytics */}
       </head>
       <body
         className={`bg-slate-50 text-slate-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-300 antialiased ${geistSans.variable} ${geistMono.variable}`}
