@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Sparkles } from 'lucide-react'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
   title: 'Blog — Tech Articles & Development Insights',

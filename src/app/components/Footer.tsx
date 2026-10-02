@@ -155,7 +155,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Saurabh Dantani · Built with Next.js &amp; Tailwind CSS
           </div>
           <div className="flex items-center gap-6">
-            <Link href="/" className="hover:text-slate-700 dark:hover:text-zinc-400 transition">Privacy</Link>
             <Link href="/about" className="hover:text-slate-700 dark:hover:text-zinc-400 transition">About</Link>
             <Link href="/contact" className="hover:text-slate-700 dark:hover:text-zinc-400 transition">Contact</Link>
           </div>

@@ -16,57 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://saurabhdantani.dev";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.saurabhdantani.work";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Saurabh Dantani | Freelance Full Stack & AI Integration Developer",
+    default: "Saurabh Dantani | Full Stack & Automation Developer, Ahmedabad",
     template: "%s | Saurabh Dantani",
   },
   description:
-    "Saurabh Dantani — Freelance Full Stack & AI Developer (React, Next.js, TypeScript, Node.js, Python). Building scalable web & mobile apps, LLM integration, and real-time systems. Based in Ahmedabad, India — available worldwide & remote.",
-  keywords: [
-    "Saurabh Dantani",
-    "Saurabh Dantani developer",
-    "Saurabh Dantani portfolio",
-    "Saurabh Dantani freelance developer",
-    "best full stack developer in India",
-    "best freelance developer in India",
-    "best Next.js developer in India",
-    "best React developer in India",
-    "best AI developer in India",
-    "best web developer in Ahmedabad",
-    "top freelance developer India",
-    "top web developer Ahmedabad",
-    "hire full stack developer India",
-    "hire freelance Next.js developer",
-    "hire AI integration developer",
-    "hire React Native developer India",
-    "Full Stack Developer",
-    "Next.js Developer",
-    "React Developer",
-    "React Native Developer",
-    "AI Integration Developer",
-    "Python Developer",
-    "Node.js Developer",
-    "LLM developer",
-    "AI agent developer",
-    "WebSocket developer",
-    "NestJS developer",
-    ".NET Core developer",
-    "web scraping developer",
-    "Playwright automation",
-    "CRM development",
-    "SEO services",
-    "GEO AEO LLMO optimization",
-    "freelance full stack developer in Ahmedabad",
-    "freelance full stack developer in Mumbai",
-    "freelance full stack developer in Bangalore",
-    "freelance full stack developer in Delhi",
-    "freelance full stack developer in Pune",
-    "freelance web developer in India",
-  ],
+    "Saurabh Dantani — Freelance Full Stack Developer (React, Next.js, Node.js, Python). Building scalable web apps, CRM systems, and automation. Based in Ahmedabad, India.",
   authors: [{ name: "Saurabh Dantani", url: BASE_URL }],
   creator: "Saurabh Dantani",
   publisher: "Saurabh Dantani",
@@ -77,9 +36,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "Saurabh Dantani Portfolio",
-    title: "Saurabh Dantani | Freelance Full Stack & AI Developer",
+    title: "Saurabh Dantani | Full Stack & Automation Developer, Ahmedabad",
     description:
-      "Freelance Full Stack & AI Developer (React, Next.js, Node.js, Python, TypeScript). Scalable web & mobile apps, AI/LLM integration. Ahmedabad, India — available worldwide.",
+      "Freelance Full Stack Developer (React, Next.js, Node.js, Python). Building scalable web apps, CRM systems, and automation. Based in Ahmedabad, India.",
     images: [
       {
         url: "/profileImg.jpg",
@@ -91,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saurabh Dantani | Freelance Full Stack & AI Developer",
+    title: "Saurabh Dantani | Full Stack & Automation Developer, Ahmedabad",
     description:
-      "Freelance Full Stack & AI Developer. 4+ Years experience in React, Next.js, Node.js, Python, AI/LLM integration. Available worldwide & remote.",
+      "Freelance Full Stack Developer. 4+ Years experience in React, Next.js, Node.js, Python, web scraping. Available worldwide & remote.",
     images: ["/profileImg.jpg"],
   },
   robots: {

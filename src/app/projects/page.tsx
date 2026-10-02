@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { projects } from '@/contents/projects'
 import { ProjectsContent } from '../components/ProjectsContent'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
   title: 'Projects — CRM, Real-Time Systems & Automation',

@@ -8,6 +8,10 @@ export interface Project {
   category?: string;
   metric?: string;
   featured?: boolean;
+  slug?: string;
+  longDescription?: string;
+  challenges?: string[];
+  results?: string[];
 }
 
 export interface Blog {

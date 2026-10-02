@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { AboutContent } from '../components/AboutContent'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
   title: 'About — Experience, Skills & Education',

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Sparkles } from "lucide-react";
 
@@ -20,6 +21,7 @@ export const HoverEffect = ({
     demoLink?: string;
     category?: string;
     metric?: string;
+    slug?: string;
   }[];
   className?: string;
 }) => {
@@ -104,6 +106,15 @@ export const HoverEffect = ({
             )}
 
             <div className="flex items-center gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-white/[0.06]">
+              {item.slug && (
+                <Link
+                  href={`/projects/${item.slug}`}
+                  className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                >
+                  <FaExternalLinkAlt className="w-3.5 h-3.5" />
+                  <span>View Case Study</span>
+                </Link>
+              )}
               {item.githubLink && (
                 <a
                   href={item.githubLink}
@@ -112,18 +123,7 @@ export const HoverEffect = ({
                   className="inline-flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                 >
                   <FaGithub className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-                  <span>GitHub Repository</span>
-                </a>
-              )}
-              {item.demoLink && (
-                <a
-                  href={item.demoLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors ml-auto"
-                >
-                  <FaExternalLinkAlt className="w-3.5 h-3.5" />
-                  <span>Live Demo</span>
+                  <span>GitHub</span>
                 </a>
               )}
             </div>

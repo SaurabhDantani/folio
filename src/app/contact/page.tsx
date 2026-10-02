@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '../components/ContactForm'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://saurabhdantani.dev'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
   title: 'Contact — Hire Saurabh Dantani for Freelance Projects',

@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   CodeXml,
   LayoutDashboard,
@@ -9,9 +10,18 @@ import {
   Zap,
   Cloud,
   Radio,
+  ArrowRight,
 } from 'lucide-react'
 
-const SERVICES = [
+type Service = {
+  icon: any
+  title: string
+  description: string
+  bullets: string[]
+  link?: string
+}
+
+const SERVICES: Service[] = [
   {
     icon: CodeXml,
     title: 'Full Stack Web Development',
@@ -22,6 +32,7 @@ const SERVICES = [
       'TypeScript strict type architecture',
       'Modern UI with Tailwind CSS & Framer Motion',
     ],
+    link: '/services/nextjs-development',
   },
   {
     icon: Zap,
@@ -44,6 +55,7 @@ const SERVICES = [
       'Lead extraction & market data pipelines',
       'Automated scheduled cron workflows',
     ],
+    link: '/services/web-scraping',
   },
   {
     icon: Radio,
@@ -137,6 +149,17 @@ export default function ServicesSection() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Learn More Link */}
+                {service.link && (
+                  <Link
+                    href={service.link}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors mt-4"
+                  >
+                    <span>Learn more</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                )}
               </motion.div>
             )
           })}

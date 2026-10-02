@@ -133,21 +133,24 @@ export default function Projects() {
 
               {/* Action Links */}
               <div className="flex items-center gap-6 pt-4 border-t border-slate-200/80 dark:border-white/[0.06]">
-                <a
-                  href={featuredProject.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/projects/${featuredProject.slug}`}
                   className="inline-flex items-center gap-1.5 text-sm font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition-colors"
                 >
-                  <span>Live product</span>
+                  <span>View case study</span>
                   <span className="text-xs">↗</span>
-                </a>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-                >
-                  <span>Case notes →</span>
                 </Link>
+                {featuredProject.githubLink && (
+                  <a
+                    href={featuredProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                  >
+                    <span>GitHub</span>
+                    <span className="text-xs">↗</span>
+                  </a>
+                )}
               </div>
             </div>
 
@@ -202,15 +205,24 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="flex items-center justify-between">
-                  <a
-                    href={p.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    href={`/projects/${p.slug}`}
                     className="inline-flex items-center gap-1 text-xs font-semibold text-sky-600 dark:text-sky-400 hover:underline"
                   >
-                    <span>View project</span>
+                    <span>View case study</span>
                     <span>↗</span>
-                  </a>
+                  </Link>
+                  {p.githubLink && (
+                    <a
+                      href={p.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-400 transition-colors"
+                    >
+                      <span>GitHub</span>
+                      <span className="text-xs">↗</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
