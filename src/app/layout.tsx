@@ -348,6 +348,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
+        <meta name="google-site-verification" content="67FZ5qpmWomdyzJzZQrH4uGTH2kPc6T7nsS4a3f5CSU" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
