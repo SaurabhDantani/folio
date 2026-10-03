@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Saurabh Dantani",
   },
   description:
-    "Saurabh Dantani — Freelance Full Stack Developer (React, Next.js, Node.js, Python). Building scalable web apps, CRM systems, and automation. Based in Ahmedabad, India.",
+    "Freelance Full Stack Developer & Automation Engineer. Building scalable Next.js apps, CRM systems, and Python scrapers. Based in Ahmedabad, India.",
   authors: [{ name: "Saurabh Dantani", url: BASE_URL }],
   creator: "Saurabh Dantani",
   publisher: "Saurabh Dantani",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "Saurabh Dantani Portfolio",
     title: "Saurabh Dantani | Full Stack & Automation Developer, Ahmedabad",
     description:
-      "Freelance Full Stack Developer (React, Next.js, Node.js, Python). Building scalable web apps, CRM systems, and automation. Based in Ahmedabad, India.",
+      "Freelance Full Stack Developer & Automation Engineer. Building scalable Next.js apps, CRM systems, and Python scrapers. Based in Ahmedabad, India.",
     images: [
       {
         url: "/profileImg.jpg",

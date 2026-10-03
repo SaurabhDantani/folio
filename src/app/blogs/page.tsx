@@ -8,7 +8,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 export const metadata: Metadata = {
   title: 'Blog — Web Development, Next.js & Automation Articles',
   description:
-    'Technical articles, case studies, and development insights by Saurabh Dantani on Next.js, TypeScript, Playwright web scraping, NestJS backend architecture, and cloud deployment.',
+    'Technical articles and guides by Saurabh Dantani on Next.js, NestJS backend architecture, TypeScript, and Playwright web scraping automation.',
   robots: {
     index: true,
     follow: true,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog — Technical Articles by Saurabh Dantani',
     description:
-      'In-depth guides on Next.js, NestJS, web automation with Playwright, and full-stack development.',
+      'Technical articles and guides by Saurabh Dantani on Next.js, NestJS backend architecture, TypeScript, and Playwright web scraping automation.',
     url: `${BASE_URL}/blogs`,
   },
   alternates: {

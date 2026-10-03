@@ -6,10 +6,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 
 export const metadata: Metadata = {
   title: 'Next.js Development Services',
-  description: 'Professional Next.js development services. Build fast, SEO-friendly web applications with React, TypeScript, and modern web technologies. Based in Ahmedabad, India.',
+  description: 'Expert Next.js development services. Fast, SEO-optimized web applications built with React, TypeScript, and Tailwind CSS. Based in Ahmedabad, India.',
   openGraph: {
     title: 'Next.js Development Services | Saurabh Dantani',
-    description: 'Build fast, SEO-friendly web applications with React, TypeScript, and modern web technologies.',
+    description: 'Expert Next.js development services. Fast, SEO-optimized web applications built with React, TypeScript, and Tailwind CSS. Based in Ahmedabad, India.',
     url: `${BASE_URL}/services/nextjs-development`,
   },
   alternates: {

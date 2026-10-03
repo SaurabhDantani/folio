@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     title: 'US-Based Lead Generation & CRM Platform',
     slug: 'lead-generation-crm',
-    description: 'Automated lead generation and CRM system for Business Development teams with custom web scraping pipelines, browser automation, and Next.js management dashboard.',
+    description: 'Automated lead generation CRM for business development teams with custom Playwright scrapers and a real-time Next.js management dashboard.',
     longDescription: 'A comprehensive lead generation and CRM platform designed for US-based Business Development teams. The system automatically scrapes leads from multiple sources, validates contact information, and manages the entire sales pipeline through an intuitive Next.js dashboard.',
     technologies: ['Express.js', 'Next.js', 'Playwright', 'Web Scraping', 'Node.js', 'Cron Jobs'],
     githubLink: 'https://github.com/SaurabhDantani',
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   {
     title: 'US-Based Medical Credentialing & RCM Software',
     slug: 'medical-credentialing-rcm',
-    description: 'Healthcare backend services and revenue cycle management (RCM) platform featuring NestJS services, automated Playwright/Python bots, and Next.js analytics dashboard.',
+    description: 'Healthcare backend services and revenue cycle management platform with NestJS, automated Python bots, and a Next.js analytics dashboard.',
     longDescription: 'A sophisticated healthcare platform for medical credentialing and Revenue Cycle Management (RCM). The system automates complex medical billing workflows, credential verification processes, and provides real-time analytics for healthcare providers.',
     technologies: ['NestJS', 'Python', 'Playwright', 'Next.js', 'PostgreSQL', 'Automated Workflows'],
     githubLink: 'https://github.com/SaurabhDantani',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
   {
     title: 'AI & GenAI Portfolio Engine',
     slug: 'ai-portfolio-engine',
-    description: 'Modern developer portfolio with dark mode glassmorphism, Framer Motion animations, floating navigation, AI chatbot assistant, and automated contact notifications.',
+    description: 'AI portfolio and client inquiry engine integrating OpenAI APIs with automated lead routing, contextual replies, and a Next.js UI dashboard.',
     longDescription: 'A cutting-edge portfolio website featuring AI integration, modern design patterns, and excellent performance. The site includes an AI chatbot assistant, automated email notifications, and achieves perfect Core Web Vitals scores.',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Nodemailer'],
     githubLink: 'https://github.com/SaurabhDantani/folio',

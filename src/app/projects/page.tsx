@@ -7,11 +7,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 export const metadata: Metadata = {
   title: 'Projects — CRM, Real-Time Systems & Automation',
   description:
-    'Explore production projects by Saurabh Dantani — US-Based CRM platforms, real-time IPO systems, medical credentialing software, web scraping automation, and community management portals. Built with Next.js, NestJS, .NET Core, Python, and AWS.',
+    'Explore production projects by Saurabh Dantani: US CRM platforms, real-time IPO tracking, and web scraping automation built with Next.js and NestJS.',
   openGraph: {
     title: 'Projects by Saurabh Dantani | Full Stack & AI Developer',
     description:
-      'CRM platforms, real-time systems, healthcare software, and automation tools. Built with Next.js, NestJS, .NET Core, Python.',
+      'Explore production projects by Saurabh Dantani: US CRM platforms, real-time IPO tracking, and web scraping automation built with Next.js and NestJS.',
     url: `${BASE_URL}/projects`,
   },
   alternates: {

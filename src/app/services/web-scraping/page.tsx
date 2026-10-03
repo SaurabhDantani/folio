@@ -6,10 +6,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 
 export const metadata: Metadata = {
   title: 'Web Scraping & Browser Automation Services',
-  description: 'Professional web scraping and browser automation services. Extract data from any website, automate workflows, and build scheduled data pipelines with Playwright and Python.',
+  description: 'Custom web scraping and browser automation services. Extract web data, bypass anti-bots, and build automated cron pipelines with Playwright & Python.',
   openGraph: {
     title: 'Web Scraping & Browser Automation Services | Saurabh Dantani',
-    description: 'Extract data from any website, automate workflows, and build scheduled data pipelines with Playwright and Python.',
+    description: 'Custom web scraping and browser automation services. Extract web data, bypass anti-bots, and build automated cron pipelines with Playwright & Python.',
     url: `${BASE_URL}/services/web-scraping`,
   },
   alternates: {

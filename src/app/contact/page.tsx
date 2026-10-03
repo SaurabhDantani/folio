@@ -6,11 +6,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 export const metadata: Metadata = {
   title: 'Contact — Hire Saurabh Dantani for Freelance Projects',
   description:
-    'Get in touch with Saurabh Dantani for freelance full-stack development, CRM platforms, web scraping automation, AI integration, or technical consulting. Based in Ahmedabad, India — available worldwide for remote projects.',
+    'Get in touch with Saurabh Dantani for freelance full-stack development, Python web scraping, CRM systems, and AI automation. Available worldwide.',
   openGraph: {
     title: 'Contact Saurabh Dantani | Hire a Full Stack Developer',
     description:
-      'Reach out for freelance web development, automation, CRM, or AI projects. Ahmedabad, India — available worldwide.',
+      'Get in touch with Saurabh Dantani for freelance full-stack development, Python web scraping, CRM systems, and AI automation. Available worldwide.',
     url: `${BASE_URL}/contact`,
   },
   alternates: {
