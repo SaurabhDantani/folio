@@ -65,9 +65,58 @@ const techStack = [
   'PostgreSQL / MongoDB',
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Business Automation & Workflow Engineering Services',
+  serviceType: 'Business Workflow Automation',
+  description:
+    'Custom business automation, cron pipelines, webhook integrations, and data processing automation by Saurabh Dantani.',
+  provider: {
+    '@type': 'Person',
+    name: 'Saurabh Dantani',
+    url: BASE_URL,
+  },
+  areaServed: 'Worldwide',
+  url: `${BASE_URL}/services/automation`,
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: BASE_URL,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: `${BASE_URL}/#services`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Automation',
+      item: `${BASE_URL}/services/automation`,
+    },
+  ],
+}
+
 export default function AutomationService() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Header */}
       <div className="bg-white dark:bg-zinc-950 border-b border-slate-200 dark:border-white/10">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 py-8">

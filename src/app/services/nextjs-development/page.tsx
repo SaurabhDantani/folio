@@ -64,9 +64,58 @@ const techStack = [
   'Vercel / AWS deployment',
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Next.js & Full-Stack Web Development Services',
+  serviceType: 'Full-Stack Web Development',
+  description:
+    'Custom Next.js web application development, React UI/UX design, performant backend integration, and SEO optimization by Saurabh Dantani.',
+  provider: {
+    '@type': 'Person',
+    name: 'Saurabh Dantani',
+    url: BASE_URL,
+  },
+  areaServed: 'Worldwide',
+  url: `${BASE_URL}/services/nextjs-development`,
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: BASE_URL,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: `${BASE_URL}/#services`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Next.js Development',
+      item: `${BASE_URL}/services/nextjs-development`,
+    },
+  ],
+}
+
 export default function NextJsService() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Header */}
       <div className="bg-white dark:bg-zinc-950 border-b border-slate-200 dark:border-white/10">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 py-8">

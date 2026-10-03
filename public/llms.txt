@@ -1,0 +1,51 @@
+# Saurabh Dantani — Full Stack & Automation Developer
+
+> Freelance Full Stack Developer, Backend Specialist, and Web Scraping / Automation Engineer based in Ahmedabad, Gujarat, India. 4+ years of production experience shipping web applications, real-time WebSocket platforms, CRM portals, and high-throughput data extraction scrapers for clients across the US, UK, UAE, and India.
+
+## Contact Information
+- Website: https://www.saurabhdantani.work
+- Email: saurabhdantani09@gmail.com
+- Telephone: +91 7567358252
+- Location: Ahmedabad, Gujarat, India (Available worldwide for remote work)
+- GitHub: https://github.com/SaurabhDantani
+- LinkedIn: https://www.linkedin.com/in/saurabh-dantani-profile/
+
+## Core Expertise & Tech Stack
+- Frontend: React.js, Next.js (App Router & Pages Router), TypeScript, Tailwind CSS, Framer Motion, Redux Toolkit
+- Backend: Node.js, NestJS, Express.js, .NET Core, C#, Python, Socket.IO, WebSockets, REST APIs, Microservices
+- Databases: PostgreSQL, MongoDB, MSSQL, Redis, TypeORM, Prisma
+- Automation & Web Scraping: Playwright, Puppeteer, Python (BeautifulSoup, Scrapy), Anti-bot bypass, Proxy rotation, Cron job pipelines
+- Cloud & DevOps: AWS (EC2, RDS, S3, Lambda), Docker, Nginx reverse proxy, PM2 process management, Vercel, Cloudflare
+
+## Featured Projects & Case Studies
+1. US-Based Lead Generation & CRM Platform
+   - URL: https://www.saurabhdantani.work/projects/lead-generation-crm
+   - Tech: Express.js, Next.js, Playwright, Web Scraping, Node.js, Cron Jobs
+   - Impact: Automated 1000+ monthly validated leads; reduced manual qualification time by 80%.
+
+2. US-Based Medical Credentialing & RCM Software
+   - URL: https://www.saurabhdantani.work/projects/medical-credentialing-rcm
+   - Tech: NestJS, Python, Playwright, Next.js, PostgreSQL
+   - Impact: Automated 90% of manual credentialing workflows; reduced billing errors by 60%.
+
+3. Real-Time IPO Management System
+   - URL: https://www.saurabhdantani.work/projects/real-time-ipo-system
+   - Tech: NestJS, Socket.IO, TypeScript, PostgreSQL, Cron Jobs
+   - Impact: Low-latency live market updates via WebSockets for high-frequency financial tracking.
+
+4. Community Management Platform
+   - URL: https://www.saurabhdantani.work/projects/community-management-platform
+   - Tech: Node.js, Express, PostgreSQL, TypeORM, React, Redux Toolkit
+   - Impact: Scalable community portal with robust role-based access control and high concurrency.
+
+5. AI Portfolio & Client Engine
+   - URL: https://www.saurabhdantani.work/projects/ai-portfolio-engine
+   - Tech: Next.js, TypeScript, OpenAI API, Tailwind CSS
+   - Impact: Conversational AI assistant with real-time portfolio inquiries and appointment scheduling.
+
+## Services Offered
+- Full Stack Web Development: High-performance Next.js and React web apps, SaaS dashboards, and portals.
+- Web Scraping & Browser Automation: Resilient Playwright & Python crawlers with proxy rotation and scheduled cron pipelines.
+- Business Automation & Workflows: Custom CRM automation, webhook integrations, and API bridges.
+- AI & LLM Integration: Custom chatbots, OpenAI/Claude API workflows, and intelligent business agents.
+- Cloud & DevOps Consulting: AWS EC2/RDS deployment, Docker containerization, and production reliability.

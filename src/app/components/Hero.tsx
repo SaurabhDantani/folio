@@ -48,6 +48,7 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.08] mb-3">
               Hi, I&apos;m<br />
               <span className="text-sky-500 dark:text-sky-400">Saurabh Dantani</span>
+              <span className="sr-only"> — Freelance Full Stack &amp; Automation Developer in Ahmedabad, India</span>
             </h1>
 
             {/* Typewriter Dynamic Subtitle */}

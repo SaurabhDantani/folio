@@ -8,9 +8,9 @@ import { ArrowLeft, ExternalLink, Github, CheckCircle2 } from 'lucide-react'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -20,7 +20,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug)
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
     return {
@@ -49,15 +50,65 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function ProjectPage({ params }: PageProps) {
-  const project = projects.find((p) => p.slug === params.slug)
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
 
   if (!project) {
     notFound()
   }
 
+  const projectSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: project.title,
+    description: project.longDescription || project.description,
+    applicationCategory: project.category,
+    operatingSystem: 'Any',
+    author: {
+      '@type': 'Person',
+      name: 'Saurabh Dantani',
+      url: BASE_URL,
+    },
+    url: `${BASE_URL}/projects/${project.slug}`,
+    ...(project.image && { image: project.image.startsWith('http') ? project.image : `${BASE_URL}${project.image}` }),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: BASE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Projects',
+        item: `${BASE_URL}/projects`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: project.title,
+        item: `${BASE_URL}/projects/${project.slug}`,
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Header */}
       <div className="bg-white dark:bg-zinc-950 border-b border-slate-200 dark:border-white/10">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 py-8">
