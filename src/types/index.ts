@@ -10,8 +10,13 @@ export interface Project {
   featured?: boolean;
   slug?: string;
   longDescription?: string;
+  problem?: string;
+  solution?: string;
+  result?: string;
   challenges?: string[];
   results?: string[];
+  gradientFrom?: string;
+  gradientTo?: string;
 }
 
 export interface Blog {
@@ -20,6 +25,11 @@ export interface Blog {
   date: string;
   readTime: string;
   slug: string;
+  image?: string;
+  tags?: string[];
+  content?: string;
+  featured?: boolean;
+  description?: string;
 }
 
 export interface SocialMedia {

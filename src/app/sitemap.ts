@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { projects } from '@/contents/projects'
+import { blogs } from '@/contents/blogs'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
+  }))
+
+  const blogPages = blogs.map((post) => ({
+    url: `${BASE_URL}/blogs/${post.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
   }))
 
   const servicePages = [
@@ -66,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...blogPages,
     ...servicePages,
   ]
 }
