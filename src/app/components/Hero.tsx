@@ -153,12 +153,12 @@ export default function Hero() {
               {/* Portrait Container */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden border border-slate-200 dark:border-white/12 bg-white dark:bg-zinc-950 shadow-xl dark:shadow-2xl">
                 <Image
-                  src="/profileImg.jpg"
+                  src="/image_1.jpeg"
                   alt="Saurabh Dantani — Full Stack & Automation Developer"
                   fill
                   priority
                   sizes="(max-width: 768px) 340px, 440px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 
                 {/* Subtle Vignette Gradient */}
