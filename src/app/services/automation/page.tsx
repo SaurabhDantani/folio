@@ -6,11 +6,29 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani
 
 export const metadata: Metadata = {
   title: 'Business Automation Services',
-  description: 'Business automation services to streamline workflows, eliminate manual work, and build reliable scheduled data pipelines with Python and Node.js.',
+  description:
+    'Business automation services to streamline workflows, eliminate manual work, and build reliable scheduled data pipelines with Python and Node.js.',
   openGraph: {
     title: 'Business Automation Services | Saurabh Dantani',
-    description: 'Business automation services to streamline workflows, eliminate manual work, and build reliable scheduled data pipelines with Python and Node.js.',
+    description:
+      'Business automation services to streamline workflows, eliminate manual work, and build reliable scheduled data pipelines with Python and Node.js.',
     url: `${BASE_URL}/services/automation`,
+    type: 'website',
+    images: [
+      {
+        url: `${BASE_URL}/site.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Business Automation Services by Saurabh Dantani',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Business Automation Services | Saurabh Dantani',
+    description:
+      'Business automation services to streamline workflows, eliminate manual work, and build reliable scheduled data pipelines with Python and Node.js.',
+    images: [`${BASE_URL}/site.png`],
   },
   alternates: {
     canonical: `${BASE_URL}/services/automation`,

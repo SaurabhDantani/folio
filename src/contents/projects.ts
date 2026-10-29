@@ -58,7 +58,7 @@ export const projects: Project[] = [
       "Twilio API"
     ],
     "githubLink": "https://github.com/SaurabhDantani",
-    "demoLink": "https://callingagent.buildbysandeep.dev/dashboard",
+    "demoLink": "https://github.com/SaurabhDantani",
     "image": "/projects/calling-agent-mockup.webp",
     "category": "Full Stack",
     "metric": "1000+ Leads",
@@ -438,7 +438,7 @@ export const projects: Project[] = [
       "Tailwind CSS"
     ],
     "githubLink": "https://github.com/SaurabhDantani",
-    "demoLink": "https://buildbysandeep.dev",
+    "demoLink": "https://www.saurabhdantani.work",
     "image": "/projects/portfolio-mockup.webp",
     "category": "Full Stack",
     "metric": "99+ Lighthouse",

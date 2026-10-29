@@ -5,21 +5,9 @@ import { BlogsContent } from '../components/BlogsContent'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
-  title: 'Blog & Deep Dives — AI Systems, Next.js, Mobile & Automation | Saurabh Dantani',
+  title: 'Blog & Deep Dives — AI Systems, Next.js, Mobile & Automation',
   description:
     'Engineering notes, architecture breakdowns, and production tutorials by Saurabh Dantani: AI voice platforms, Next.js App Router, Agentic AI, App Store mobile products, and Meta Ads engineering.',
-  keywords: [
-    'Saurabh Dantani blog',
-    'AI voice platform architecture',
-    'Next.js tutorials',
-    'Agentic AI vs Automation',
-    'React Native App Store guide',
-    'Generative AI production lessons',
-    'WebSocket real-time dashboard',
-    'Prompt engineering patterns',
-    'Multi-tenant AI SaaS',
-    'Full Stack developer Ahmedabad',
-  ],
   robots: {
     index: true,
     follow: true,

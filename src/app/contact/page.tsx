@@ -12,6 +12,22 @@ export const metadata: Metadata = {
     description:
       'Get in touch with Saurabh Dantani for freelance full-stack development, Python web scraping, CRM systems, and AI automation. Available worldwide.',
     url: `${BASE_URL}/contact`,
+    type: 'website',
+    images: [
+      {
+        url: `${BASE_URL}/profileImg.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Contact Saurabh Dantani',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Saurabh Dantani | Hire a Full Stack Developer',
+    description:
+      'Get in touch with Saurabh Dantani for freelance full-stack development, Python web scraping, CRM systems, and AI automation. Available worldwide.',
+    images: [`${BASE_URL}/profileImg.jpg`],
   },
   alternates: {
     canonical: `${BASE_URL}/contact`,

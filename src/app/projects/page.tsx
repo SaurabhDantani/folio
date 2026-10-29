@@ -5,23 +5,9 @@ import { ProjectsContent } from '../components/ProjectsContent'
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saurabhdantani.work'
 
 export const metadata: Metadata = {
-  title: 'Projects Portfolio — Full Stack, AI Platforms, Mobile & Automation | Saurabh Dantani',
+  title: 'Projects Portfolio — Full Stack, AI Platforms, Mobile & Automation',
   description:
     'Explore 35+ production projects by Saurabh Dantani: AI voice platforms, App Store mobile applications, healthcare systems, enterprise CRM dashboards, and Python web scrapers built with Next.js, React, Node.js, and Python.',
-  keywords: [
-    'Saurabh Dantani projects',
-    'AI Voice Campaign Platform',
-    'Xpenly App Store',
-    'Next.js Developer portfolio',
-    'React Native Mobile apps',
-    'Full Stack projects',
-    'Python web scraping projects',
-    'Healthcare management system',
-    'Enterprise CRM dashboards',
-    'FastAPI automation',
-    'Full Stack developer Ahmedabad',
-    'Freelance web developer',
-  ],
   openGraph: {
     title: 'Projects Portfolio | Saurabh Dantani — Full Stack & AI Developer',
     description:

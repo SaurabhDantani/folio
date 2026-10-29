@@ -30,6 +30,7 @@ export interface Blog {
   content?: string;
   featured?: boolean;
   description?: string;
+  noindex?: boolean;
 }
 
 export interface SocialMedia {

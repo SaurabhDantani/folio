@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!post) {
     return {
-      title: 'Article Not Found | Saurabh Dantani',
+      title: 'Article Not Found',
     }
   }
 
@@ -43,15 +43,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : `${BASE_URL}${post.image}`
 
   return {
-    title: `${post.title} | Saurabh Dantani`,
+    title: post.title,
     description: post.description || post.excerpt,
-    keywords: [
-      post.title,
-      ...(post.tags || []),
-      'Saurabh Dantani',
-      'Engineering Deep Dive',
-      'Full Stack Architecture',
-    ],
+    robots: post.noindex
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
     openGraph: {
       title: `${post.title} | Saurabh Dantani`,
       description: post.description || post.excerpt,

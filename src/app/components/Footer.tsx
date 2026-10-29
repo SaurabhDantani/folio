@@ -82,22 +82,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">Full Stack Web Development</Link>
+                <Link href="/services/nextjs-development" className="hover:text-slate-900 dark:hover:text-white transition-colors">Full Stack Web Development</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">Backend Microservices (.NET / NestJS)</Link>
+                <Link href="/services/backend-microservices" className="hover:text-slate-900 dark:hover:text-white transition-colors">Backend Microservices (.NET / NestJS)</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">Web Scraping &amp; Browser Automation</Link>
+                <Link href="/services/web-scraping" className="hover:text-slate-900 dark:hover:text-white transition-colors">Web Scraping &amp; Browser Automation</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">Real-Time Systems &amp; WebSockets</Link>
+                <Link href="/services/real-time-systems" className="hover:text-slate-900 dark:hover:text-white transition-colors">Real-Time Systems &amp; WebSockets</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">CRM &amp; Admin Dashboards</Link>
+                <Link href="/services/crm-dashboards" className="hover:text-slate-900 dark:hover:text-white transition-colors">CRM &amp; Admin Dashboards</Link>
               </li>
               <li>
-                <Link href="/#services" className="hover:text-slate-900 dark:hover:text-white transition-colors">AWS Infrastructure &amp; DevOps</Link>
+                <Link href="/services/cloud-devops" className="hover:text-slate-900 dark:hover:text-white transition-colors">AWS Infrastructure &amp; DevOps</Link>
               </li>
             </ul>
           </div>

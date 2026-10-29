@@ -44,6 +44,7 @@ const SERVICES: Service[] = [
       '.NET Core & C# backend architecture',
       'PostgreSQL, MongoDB, and MSSQL schemas',
     ],
+    link: '/services/backend-microservices',
   },
   {
     icon: Bot,
@@ -67,6 +68,7 @@ const SERVICES: Service[] = [
       'Real-time financial & market data processing',
       'Live notification & trigger systems',
     ],
+    link: '/services/real-time-systems',
   },
   {
     icon: LayoutDashboard,
@@ -78,6 +80,7 @@ const SERVICES: Service[] = [
       'Role-based access control (RBAC)',
       'High-performance analytics dashboards',
     ],
+    link: '/services/crm-dashboards',
   },
   {
     icon: Cloud,
@@ -89,6 +92,7 @@ const SERVICES: Service[] = [
       'Docker containerization & deployment',
       'Nginx reverse proxy & SSL automation',
     ],
+    link: '/services/cloud-devops',
   },
 ]
 

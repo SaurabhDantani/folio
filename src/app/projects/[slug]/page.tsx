@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return {
-      title: 'Project Not Found | Saurabh Dantani',
+      title: 'Project Not Found',
     }
   }
 
@@ -44,16 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : `${BASE_URL}${project.image}`
 
   return {
-    title: `${project.title} — Case Study & Architecture | Saurabh Dantani`,
+    title: `${project.title} — Case Study & Architecture`,
     description: project.description,
-    keywords: [
-      project.title,
-      project.category || 'Web Development',
-      ...(project.technologies || []),
-      'Saurabh Dantani',
-      'Full Stack Developer',
-      'Case Study',
-    ],
     openGraph: {
       title: `${project.title} | Saurabh Dantani`,
       description: project.description,

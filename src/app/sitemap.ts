@@ -14,31 +14,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  const blogPages = blogs.map((post) => ({
-    url: `${BASE_URL}/blogs/${post.slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }))
-
-  const servicePages = [
-    {
-      url: `${BASE_URL}/services/web-scraping`,
+  const blogPages = blogs
+    .filter((post) => !post.noindex)
+    .map((post) => ({
+      url: `${BASE_URL}/blogs/${post.slug}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
-    },
+    }))
+
+  const servicePages = [
     {
       url: `${BASE_URL}/services/nextjs-development`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/services/backend-microservices`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/services/web-scraping`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/services/real-time-systems`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/services/crm-dashboards`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/services/cloud-devops`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
     },
     {
       url: `${BASE_URL}/services/automation`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.8,
     },
   ]
 

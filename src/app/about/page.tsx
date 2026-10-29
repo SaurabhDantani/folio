@@ -12,6 +12,22 @@ export const metadata: Metadata = {
     description:
       'Saurabh Dantani is a Full Stack Developer with 4+ years building Next.js apps, NestJS backends, and Python automation. Based in Ahmedabad, India.',
     url: `${BASE_URL}/about`,
+    type: 'profile',
+    images: [
+      {
+        url: `${BASE_URL}/profileImg.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Saurabh Dantani — About',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Saurabh Dantani | Full Stack & AI Developer',
+    description:
+      'Saurabh Dantani is a Full Stack Developer with 4+ years building Next.js apps, NestJS backends, and Python automation. Based in Ahmedabad, India.',
+    images: [`${BASE_URL}/profileImg.jpg`],
   },
   alternates: {
     canonical: `${BASE_URL}/about`,
