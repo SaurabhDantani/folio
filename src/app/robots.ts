@@ -11,6 +11,11 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
       {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/'],
+      },
+      {
         userAgent: 'GPTBot',
         allow: '/',
       },
@@ -35,7 +40,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: `${BASE_URL}/sitemap.xml`,
+    sitemap: [
+      `${BASE_URL}/sitemap.xml`,
+      `${BASE_URL}/feed.xml`,
+    ],
     host: BASE_URL,
   }
 }
