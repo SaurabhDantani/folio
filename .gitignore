@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,73 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# Next.js & Build Outputs
 /.next/
 /out/
+/build/
+/dist/
 
-# production
-/build
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs & Debugging
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+build.log
 
-# env files (can opt-in for committing if needed)
+# Testing & Coverage
+/coverage
+*.lcov
+.nyc_output
+
+# Environment Variables & Secrets
 .env*
+!.env.example
 
-# vercel
+# Google Cloud & API Credentials (DO NOT COMMIT)
+service_account*.json
+*key.json
+credentials.json
+client_secret*.json
+*.pem
+*.key
+*.crt
+
+# Editor & IDE Configs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS-generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Temporary & Audit Documents
+*.tmp
+*.temp
+*Audit*.pdf
+*audit*.pdf
+
+# Explicitly Preserve Public Assets
+!public/
+!public/**
+!public/resume.pdf
+!site.png
+
+# Hosting Platforms
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
