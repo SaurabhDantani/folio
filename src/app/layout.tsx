@@ -5,6 +5,7 @@ import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import AIChatbot from "./ai/AIChatbot";
+import ConnectPopup from "./components/ConnectPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -384,6 +385,7 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
           <AIChatbot />
+          <ConnectPopup />
         </ThemeProvider>
       </body>
     </html>
