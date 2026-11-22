@@ -8,6 +8,7 @@ import { fadeInUp, fadeIn, slideInLeft, slideInRight } from '@/lib/animations'
 interface FormData {
   name: string;
   email: string;
+  phone?: string;
   message: string;
 }
 
@@ -17,6 +18,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     message: ''
   })
   const [status, setStatus] = useState<FormStatus>('idle')
@@ -31,13 +33,16 @@ export function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          source: 'Contact Page',
+        }),
       })
 
       if (!response.ok) throw new Error('Failed to send message')
 
       setStatus('success')
-      setFormData({ name: '', email: '', message: '' })
+      setFormData({ name: '', email: '', phone: '', message: '' })
     } catch {
       setStatus('error')
     }
@@ -175,6 +180,24 @@ export function ContactForm() {
                 onChange={handleChange}
                 required
                 placeholder="john@example.com"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all text-sm"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <div className="flex items-center justify-between mb-2">
+                <label htmlFor="phone" className="block text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                  Phone / WhatsApp
+                </label>
+                <span className="text-[10px] text-gray-500 dark:text-gray-400 font-normal">Optional</span>
+              </div>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+91 75673 58252 or +1 (555) 000-0000"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all text-sm"
               />
             </motion.div>
